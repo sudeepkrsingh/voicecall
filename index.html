@@ -11,15 +11,29 @@
     <link rel="stylesheet" href="wadatacalls.css">
     <!-- <link rel="stylesheet" href="sudeep.css"> -->
 
-    <script>
-        
+   <script>
+        document.querySelector("#error").style.display = "none";
+        document.querySelector("audio").pause();
         function changeusername() {
+
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
-            document.querySelector("#callername").innerText = username;
-            document.querySelector("#callerno").innerText = userphno;
-            document.querySelector(".form-container-container").style.display = "none";
-            document.querySelector("#Call-Maker-Container").style.display = "block";
+            if (username != "") {
+                document.querySelector("#callername").innerText = username;
+                document.querySelector("#callerno").innerText = userphno;
+                document.querySelector(".form-container-container").style.display = "none";
+                document.querySelector("#Call-Maker-Container").style.display = "block";
+                document.querySelector("audio").play();
+                document.querySelector("#error").style.display = "none";
+                document.querySelector("#error").style.visibility = "hidden";
+                
+            }
+            else {
+                document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
+                window.location.href = "login.html";
+                document.querySelector("audio").pause();
+            }
+
         }
     </script>
 </head>
