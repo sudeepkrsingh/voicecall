@@ -18,11 +18,11 @@
 
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
-var userimg = document.querySelector("#img").src;
+
             if (username != "") {
                 document.querySelector("#callername").innerText = username;
                 document.querySelector("#callerno").innerText = userphno;
-document.querySelector("#img-person" ).src = userimg;
+
                 document.querySelector(".form-container-container").style.display = "none";
                 document.querySelector("#Call-Maker-Container").style.display = "block";
                 document.querySelector("audio").play();
