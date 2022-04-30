@@ -1,4 +1,9 @@
-.welcome-mess {
+* {
+    overflow: hidden;
+}
+
+.welcome-mess,
+#error {
     background-color: #5C72FF;
     background-image: linear-gradient(to right, #2741e9, #7727f0);
     z-index: 3;
@@ -186,6 +191,8 @@ div#Call-Maker-Container {
     text-align: center;
 
 }
+
+
 #callerno {
     padding-top: 0;
 }
@@ -236,4 +243,26 @@ audio {
     position: fixed;
     top: 20px;
 
+}
+
+#swipeuptext {
+    animation-name: animated-swipe-up-text;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    opacity: 0.3;
+    transition: 20s;
+
+}
+
+@keyframes animated-swipe-up-text {
+    50% {
+        position: relative;
+        bottom: 2px;
+    }
+
+    100% {
+        position: relative;
+        bottom: 4px;
+    }
 }
