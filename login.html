@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="shortcut icon" href="/wacalls/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="194x194" href="/wacalls/apple-touch-icon.png" type="image/png">
+    <title>Whatsapp Call</title>
+    <link rel="stylesheet" href="wadatacalls.css">
+    <!-- <link rel="stylesheet" href="sudeep.css"> -->
+
+    <script>
+        
+        function changeusername() {
+            var username = document.querySelector("#name").value;
+            var userphno = document.querySelector("#phno").value;
+            document.querySelector("#callername").innerText = username;
+            document.querySelector("#callerno").innerText = userphno;
+            document.querySelector(".form-container-container").style.display = "none";
+            document.querySelector("#Call-Maker-Container").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form-container-container">
+        <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
+        <div class="form-container">
+            <div class="form-head-container">
+                <img id="contact-us-img" src="/images/icons8-contact-us-64.png">
+                <p id="contact-us-label">Make Phantom Call</p>
+            </div>
+            <form action="" id="contact-us-form">
+                <div class="label-input-container">
+                    <label for="name" class="form-items">Name</label>
+                    <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
+                </div>
+                <br><br>
+                <div class="label-input-container">
+                    <label for="phno" class="form-items">Contact No.</label>
+                    <input id="phno" name="phno" type="number" placeholder="1234567892" max="9999999999"
+                        min="1000000000">
+                </div>
+                <br><br>
+                <div class="label-input-container">
+                    <label for="img" class="form-items">Image</label>
+                    <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg">
+                </div>
+                <button type="button" id="submit-btn" value="submit" onclick="changeusername() "
+                    ondblclick="show()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- End of Forum -->
+    <!-- <input class="name" type="text">
+    <span onclick="change()">Change me!!!</span> -->
+    <!-- Start of Call Maker container -->
+    <!-- Start of Call Maker container -->
+    <!-- Start of Call Maker container -->
+    <!-- Start of Call Maker container -->
+    <!-- Start of Call Maker container -->
+    <!-- Start of Call Maker container -->
+
+    <!-- Start of Call Maker container -->
+    <div id="Call-Maker-Container">
+        <span id="current-time"></span>
+        <div>
+            <span>
+                <img id="img-person" src="wa default img.jpg">
+                <span id="callername"></span>
+                <span id="callerno"></span>
+                <span id="wavoicecall">WhatsApp voice call</span>
+            </span>
+            <div id="img-cont-container">
+
+
+                <span id="img-container">
+                    <img id="img-hangup-icon" src="WhatsApp Image 2022-04-25 at 8.46.28 AM.jpeg">
+
+                    <span id="arrow-container" style="position: relative; bottom: 110px;">
+                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block;">
+                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block" ;>
+                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png">
+
+                    </span>
+
+
+                    <img id="img-takeup-icon" src="WhatsApp Image 2022-04-25 at 8.54.51 AM.jpeg" onclick="calltaken()">
+                    <!-- <img id="img-mess-icon" src="message.png"> -->
+
+                </span>
+                <p style="color:#8b8b8b; margin: auto; display: flex; align-items: center; justify-content: center;">
+                    Swipe up to accept
+                </p>
+            </div>
+            <div style="border:2px solid red; display: none;">
+                <audio autoplay loop>
+                    <source src="/wacalls/xiaomi_original.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    var Currentdate = new Date();
+    var hour = Currentdate.getHours();
+    var minute = Currentdate.getMinutes();
+    var Currenttime = document.querySelector('#current-time').innerHTML = hour.toString() + ":" + minute.toString();
+    document.querySelector("#Call-Maker-Container").style.display = "none";
+</script>
+
+</html>
