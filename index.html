@@ -18,8 +18,9 @@
 
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
-            var image = document.getElementById("#img-person");     
+            
             if (username != "") {
+                var image = document.getElementById("#img-person");
                 document.querySelector("#callername").innerText = username;
                 document.querySelector("#callerno").innerText = userphno;
                  image.src = URL.createObjectURL(event.target.files[0]);
