@@ -20,10 +20,10 @@
             var userphno = document.querySelector("#phno").value;
             
             if (username != "") {
-                var image = document.getElementById("#img-person");
+               
                 document.querySelector("#callername").innerText = username;
                 document.querySelector("#callerno").innerText = userphno;
-                 image.src = URL.createObjectURL(event.target.files[0]);
+                
 
                 document.querySelector(".form-container-container").style.display = "none";
                 document.querySelector("#Call-Maker-Container").style.display = "block";
