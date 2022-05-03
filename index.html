@@ -46,7 +46,7 @@
     </script>
 </head>
 
-<body>
+<body ondblclick="delDIO()">
     <div class="form-container-container">
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
         <div class="form-container">
@@ -69,6 +69,10 @@
                 <div class="label-input-container">
                     <label for="img" class="form-items">Image</label>
                     <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg">
+                </div>
+                 <div class="label-input-container">
+                    <label for="rec-audio" class="form-items">Audio</label>
+                    <input id="re-audio" name="rec-audio" type="file" >
                 </div>
                 <button type="button" id="submit-btn" value="submit" onclick="changeusername(); loadFile();"
                     >Submit</button>
@@ -109,7 +113,7 @@
 
 
                 <span id="img-container">
-                    <img id="img-hangup-icon" src="phone-hang up.svg">
+                    <img id="img-hangup-icon" src="phone-hang up.svg" onclick="hangcall()">
 
                     <span id="arrow-container" style="position: relative; bottom: 110px;">
                         <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block;">
@@ -140,22 +144,23 @@
         <div id="end-2-container">
 
             <div id="end-2-text" style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
-                    src="icons8-chevron-up-30.png" id="down-arrow"><img src="icons8-lock.svg"
-                    style="width: 15px;margin: 6px;">End-to-end encrypted<img src="add to contact.png" id="add-con-img">
+                    src="icons8-chevron-up-30.png" id="down-arrow" class="disabled-icon" onclick="dioCheckNet()"><img src="icons8-lock.svg"
+                    style="width: 15px;margin: 6px;">End-to-end encrypted<img src="add to contact.png" id="add-con-img" class="disabled-icon" onclick="dioCheckNet()">
             </div>
 
         </div>
         <span id="username-ctc"
             style="font-size: x-large; font-weight: 900; color: white; display: flex; align-items: center; justify-content: center;">Hello</span>
         <span id="stopwatch">00:00</span>
+        <div class="disabled-icon-overlay">Please check your internet connectivity<img src="delete.png" onclick="delDIO()"></div>
         <img src="wa default img.jpg" id="img-taken-person" style="border-radius: 100%">
 
         <div id="bottom-call-tool-container">
-            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" >
-            <img src="icons8-speaker-24.png" alt="" width="30px">
-            <img src="icons8-no-video-50.png" alt="" width="50px">
-            <img src="icons8-mute-unmute-30.png" alt="" width="30px">
-            <img src="phone-hang up.svg" alt="" width="50px">
+            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="icons8-speaker-24.png" alt="" width="30px" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="icons8-mute-unmute-30.png" alt="" width="30px" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()">
         </div>
 
 
@@ -224,7 +229,18 @@
     function resetTimer() {
         timer.innerHTML = '00:00:00';
     }
+       document.querySelector(".disabled-icon-overlay").style.display = "none";
     document.querySelector("audio").pause();
+    function dioCheckNet() {
+        document.querySelector(".disabled-icon-overlay").style.display = "block";
+
+    }
+    function delDIO() {
+        document.querySelector(".disabled-icon-overlay").style.display = "none";
+    }
+    function hangcall () {
+        window.location.href = "login.html";
+    }
     
 </script>
 
