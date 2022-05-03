@@ -39,6 +39,13 @@
             }
 
         }
+        function calltaken() {
+            document.querySelector("#call-taken-container").style.display = "block";
+            document.querySelector("#Call-Maker-Container").style.display = "none";
+            var username = document.querySelector("#name").value;
+            document.querySelector("#username-ctc").innerText = username;
+            
+        }
     </script>
 </head>
 
@@ -132,13 +139,95 @@
         </div>
     </div>
     <div id="error" ></div>
+        <div id="call-taken-container">
+        <div id="end-2-container">
+
+            <div id="end-2-text" style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
+                    src="icons8-chevron-up-30.png" id="down-arrow"><img src="icons8-lock.svg"
+                    style="width: 15px;margin: 6px;">End-to-end encrypted<img src="add to contact.png" id="add-con-img">
+            </div>
+
+        </div>
+        <span id="username-ctc"
+            style="font-size: x-large; font-weight: 900; color: white; display: flex; align-items: center; justify-content: center;">Hello</span>
+        <span id="stopwatch">00:00</span>
+        <img src="wa default img.jpg" id="img-taken-person" width="400px" height="400px">
+
+        <div id="bottom-call-tool-container">
+            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" >
+            <img src="icons8-speaker-24.png" alt="" width="30px">
+            <img src="icons8-no-video-50.png" alt="" width="50px">
+            <img src="icons8-mute-unmute-30.png" alt="" width="30px">
+            <img src="phone-hang up.svg" alt="" width="50px">
+        </div>
+
+
+    </div>
 </body>
 <script>
     var Currentdate = new Date();
     var hour = Currentdate.getHours();
     var minute = Currentdate.getMinutes();
     var Currenttime = document.querySelector('#current-time').innerHTML = hour.toString() + ":" + minute.toString();
-    document.querySelector("#Call-Maker-Container").style.display = "none";
+   document.querySelector("#Call-Maker-Container").style.display = "none";
+    document.querySelector("#call-taken-container").style.display = "none";
+    const timer = document.getElementById('stopwatch');
+
+    var hr = 0;
+    var min = 0;
+    var sec = 0;
+    var stoptime = true;
+
+    function startTimer() {
+        if (stoptime == true) {
+            stoptime = false;
+            timerCycle();
+        }
+    }
+    function stopTimer() {
+        if (stoptime == false) {
+            stoptime = true;
+        }
+    }
+
+    function timerCycle() {
+        if (stoptime == false) {
+            sec = parseInt(sec);
+            min = parseInt(min);
+            hr = parseInt(hr);
+
+            sec = sec + 1;
+
+            if (sec == 60) {
+                min = min + 1;
+                sec = 0;
+            }
+            if (min == 60) {
+                hr = hr + 1;
+                min = 0;
+                sec = 0;
+            }
+
+            if (sec < 10 || sec == 0) {
+                sec = '0' + sec;
+            }
+            if (min < 10 || min == 0) {
+                min = '0' + min;
+            }
+            if (hr < 10 || hr == 0) {
+                hr = '0' + hr;
+            }
+
+            timer.innerHTML = hr + ':' + min + ':' + sec;
+
+            setTimeout("timerCycle()", 1000);
+        }
+    }
+
+    function resetTimer() {
+        timer.innerHTML = '00:00:00';
+    }
+    
 </script>
 
 </html>
