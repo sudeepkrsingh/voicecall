@@ -302,12 +302,14 @@ audio {
     ;
 }
 
+
 #stopwatch {
     margin: 15px;
     color: #8b8b8b;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: x-large;
 }
 
 #bottom-call-tool-container {
