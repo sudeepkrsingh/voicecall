@@ -31,7 +31,7 @@
             }
             else {
                 document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
-                window.location.href = "login.html";
+                window.location.href = "index.html";
                 document.querySelector("audio").pause();
             }
 
@@ -70,8 +70,8 @@
                     <label for="img" class="form-items">Image</label>
                     <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg">
                 </div>
-                <button type="button" id="submit-btn" value="submit" onclick="changeusername() "
-                    ondblclick="show()">Submit</button>
+                <button type="button" id="submit-btn" value="submit" onclick="changeusername(); loadFile();"
+                    >Submit</button>
             </form>
         </div>
     </div>
