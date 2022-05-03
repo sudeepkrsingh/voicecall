@@ -1,4 +1,6 @@
-
+* {
+    overflow: hidden;
+}
 
 .welcome-mess,
 #error {
@@ -111,6 +113,10 @@ div#Call-Maker-Container {
     overflow: hidden;
 
 }
+#img-taken-person {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
 
 #img-hangup-icon,
 #img-takeup-icon,
@@ -126,7 +132,7 @@ div#Call-Maker-Container {
     ;
 }
 #img-hangup-icon {
-    width: 90PX;
+    width: 90px;
 }
 
 #img-takeup-icon,
