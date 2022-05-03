@@ -246,6 +246,7 @@ div#Call-Maker-Container {
 
 
 
+
 body {
     background-image: url('wp7130410.webp');
 
@@ -338,4 +339,28 @@ audio {
     position: absolute;
     top: 0px;
     margin: 10px;}
+.disabled-icon:hover {
+    opacity: 0.5;
+    background-color: #404142;
+    border-radius: 100%;
+    
+}
+.disabled-icon-overlay {
+    background-color: #404142;
+    border-radius: 20px;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.disabled-icon-overlay img{
+    position: absolute;
+    right: -15px;
+    top: auto;
+    bottom: auto;
+}
 
