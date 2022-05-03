@@ -267,3 +267,62 @@ audio {
         bottom: 4px;
     }
 }
+/* Call taken up Container-css */
+#down-arrow {
+    transform: rotate(180deg);
+    width: 30px;
+}
+
+#add-con-img {
+    border-radius: 100%;
+    width: 30px;
+}
+
+#down-arrow,
+#add-con-img {
+    border-radius: 100%;
+    display: inline;
+
+    padding: 20px;
+    margin: auto;
+
+    align-items: center;
+    justify-content: space-evenly;
+    ;
+}
+
+#stopwatch {
+    margin: 15px;
+    color: #8b8b8b;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#bottom-call-tool-container {
+    background-color: #1f2c34;
+    padding: 70px 30px ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    /* position: fixed;
+    bottom: 0px;
+    margin: auto;
+    padding: auto; */
+    position: relative;
+   
+}
+
+/* #end-2-text {
+    margin-left: -500px;
+    margin-right: -500px;
+} */
+
+#down-icon-arrow {
+    transform: rotate(-90deg);
+    position: absolute;
+top: 0px;
+margin: 10px;}
+
