@@ -115,6 +115,12 @@ div#Call-Maker-Container {
 #img-taken-person {
     margin-top: 90px;
     margin-bottom: 90px;
+    border-radius: 100%;
+    display: flex;
+    margin: auto;
+    height: 150px;
+    width: 15px;
+    overflow: hidden;
 }
 
 #img-hangup-icon,
