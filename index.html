@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="194x194" href="apple-touch-icon.png" type="image/png">
+    <link id="favicon" rel="shortcut icon" href="/wacalls/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="194x194" href="/wacalls/apple-touch-icon.png" type="image/png">
     <title>Whatsapp Call</title>
     <link rel="stylesheet" href="wadatacalls.css">
     <!-- <link rel="stylesheet" href="sudeep.css"> -->
 
-   <script>
+    <script>
         document.querySelector("#error").style.display = "none";
+
         document.querySelector("audio").pause();
-       function changeusername() {
-//             var userimg = document.querySelector("#img").src;
+
+        
+        function changeusername() {
+            // var userimg = document.querySelector("#img").src;
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
             if (username != "" && userphno != "") {
                 document.querySelector("#callername").innerText = username;
                 document.querySelector("#callerno").innerText = userphno;
-//                 document.querySelector("#img-person").innerText = userimg;
+                // document.querySelector("#img-person").src = userimg;
                 document.querySelector(".form-container-container").style.display = "none";
                 document.querySelector("#Call-Maker-Container").style.display = "block";
                 document.querySelector("audio").play();
@@ -31,7 +34,7 @@
             }
             else {
                 document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
-                window.location.href = "index.html";
+                window.location.href = "login.html";
                 document.querySelector("audio").pause();
             }
 
@@ -42,6 +45,7 @@
             var username = document.querySelector("#name").value;
             document.querySelector("#username-ctc").innerText = username;
             document.querySelector("audio").pause();
+
         }
     </script>
 </head>
@@ -51,7 +55,7 @@
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
         <div class="form-container">
             <div class="form-head-container">
-                <img id="contact-us-img" src="icons8-contact-us-64.png">
+                <img id="contact-us-img" src="/images/icons8-contact-us-64.png">
                 <p id="contact-us-label">Make Phantom Call</p>
             </div>
             <form action="" id="contact-us-form">
@@ -62,20 +66,20 @@
                 <br><br>
                 <div class="label-input-container">
                     <label for="phno" class="form-items">Contact No.</label>
-                    <input id="phno" name="phno" type="number" placeholder="1234567892" max="9999999999"
-                        min="1000000000">
+                    <input id="phno" name="phno" type="number" required autocomplete="mobile" placeholder="1234567892"
+                        max="9999999999" >
                 </div>
                 <br><br>
                 <div class="label-input-container">
                     <label for="img" class="form-items">Image</label>
-                    <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg" onclick="loadFile();">
+                    <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg" onchange="loadFile()">
                 </div>
-                 <div class="label-input-container">
+                <div class="label-input-container">
                     <label for="rec-audio" class="form-items">Audio</label>
-                    <input id="re-audio" name="rec-audio" type="file" >
+                    <input id="re-audio" name="rec-audio" type="file">
                 </div>
-                <button type="button" id="submit-btn" value="submit" onclick="changeusername();"
-                    >Submit</button>
+                <button type="button" id="submit-btn" value="submit"
+                    onclick="changeusername();">Submit</button>
             </form>
         </div>
     </div>
@@ -117,46 +121,62 @@
 
                     <span id="arrow-container" style="position: relative; bottom: 110px;">
                         <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block;">
-                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block" ;>
+                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block">
                         <img class="img-arrow-icon" src="icons8-chevron-up-30.png">
 
                     </span>
 
 
-                    <img id="img-takeup-icon" src="phone-5981.svg" onclick="calltaken();startTimer();" >
+                    <img id="img-takeup-icon" src="phone-5981.svg" onclick="calltaken();startTimer();" ondragleave="calltaken()">
                     <!-- <img id="img-mess-icon" src="message.png"> -->
 
                 </span>
-                <p style="color:#8b8b8b; margin: auto; display: flex; align-items: center; justify-content: center;">
+                <p id="swipeuptext"
+                    style="color:#8b8b8b; margin: auto; display: flex; align-items: center; justify-content: center;">
                     Swipe up to accept
                 </p>
             </div>
             <div style="border:2px solid red; display: none;">
                 <audio autoplay loop>
-                    <source src="xiaomi_original.mp3" type="audio/mpeg">
+                    <source src="/wacalls/xiaomi_original.mp3" type="audio/mpeg">
                 </audio>
             </div>
 
         </div>
     </div>
-    <div id="error" ></div>
-        <div id="call-taken-container">
+    <div id="error"></div>
+
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    <!-- Start of Call taken  container -->
+    
+    <!-- Start of Call taken  container -->
+    <div id="call-taken-container">
         <div id="end-2-container">
 
-            <div id="end-2-text" style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
-                    src="icons8-chevron-up-30.png" id="down-arrow" class="disabled-icon" onclick="dioCheckNet()"><img src="icons8-lock.svg"
-                    style="width: 15px;margin: 6px;">End-to-end encrypted<img src="add to contact.png" id="add-con-img" class="disabled-icon" onclick="dioCheckNet()">
+            <div id="end-2-text"
+                style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
+                    src="icons8-chevron-up-30.png" id="down-arrow" class="disabled-icon" onclick="dioCheckNet()"><img
+                    src="icons8-lock.svg" style="width: 15px;margin: 6px;">End-to-end encrypted<img
+                    src="add to contact.png" id="add-con-img" class="disabled-icon" onclick="dioCheckNet()">
             </div>
 
         </div>
         <span id="username-ctc"
             style="font-size: x-large; font-weight: 900; color: white; display: flex; align-items: center; justify-content: center;">Hello</span>
         <span id="stopwatch">00:00</span>
-        <div class="disabled-icon-overlay">Please check your internet connectivity<img src="delete.png" onclick="delDIO()"></div>
-        <img src="wa default img.jpg" id="img-taken-person" style="border-radius: 100%">
+        <div class="disabled-icon-overlay">Please check your internet connectivity<img src="delete.png"
+                onclick="delDIO()"></div>
+        <img src="wa default img.jpg" id="img-taken-person" width="400px" height="400px">
 
         <div id="bottom-call-tool-container">
-            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" class="disabled-icon"
+                onclick="dioCheckNet()">
             <img src="icons8-speaker-24.png" alt="" width="30px" class="disabled-icon" onclick="dioCheckNet()">
             <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet()">
             <img src="icons8-mute-unmute-30.png" alt="" width="30px" class="disabled-icon" onclick="dioCheckNet()">
@@ -170,8 +190,14 @@
     var Currentdate = new Date();
     var hour = Currentdate.getHours();
     var minute = Currentdate.getMinutes();
+    if (minute.toString() < 10) {
+        '0' + minute.toString();
+    } else {
+        minute.toString();
+    }
     var Currenttime = document.querySelector('#current-time').innerHTML = hour.toString() + ":" + minute.toString();
-   document.querySelector("#Call-Maker-Container").style.display = "none";
+
+    document.querySelector("#Call-Maker-Container").style.display = "none";
     document.querySelector("#call-taken-container").style.display = "none";
     const timer = document.getElementById('stopwatch');
 
@@ -229,7 +255,7 @@
     function resetTimer() {
         timer.innerHTML = '00:00:00';
     }
-       document.querySelector(".disabled-icon-overlay").style.display = "none";
+    document.querySelector(".disabled-icon-overlay").style.display = "none";
     document.querySelector("audio").pause();
     function dioCheckNet() {
         document.querySelector(".disabled-icon-overlay").style.display = "block";
@@ -238,17 +264,21 @@
     function delDIO() {
         document.querySelector(".disabled-icon-overlay").style.display = "none";
     }
-    function hangcall () {
-        window.location.href = "index.html";
+    function hangcall() {
+        window.location.href = "login.html";
     }
-      function loadFile() {
+    
+    function loadFile() {
         var image = document.querySelector('#img-person');
         image.src = URL.createObjectURL(event.target.files[0]);
 
         var image1 = document.querySelector('#img-taken-person');
         image1.src = URL.createObjectURL(event.target.files[0]);
     };
-    
+
 </script>
+
+
+
 
 </html>
