@@ -246,14 +246,14 @@
                 hr = '0' + hr;
             }
 
-            timer.innerHTML = hr + ':' + min + ':' + sec;
+            timer.innerHTML = min + ':' + sec;
 
             setTimeout("timerCycle()", 1000);
         }
     }
 
     function resetTimer() {
-        timer.innerHTML = '00:00:00';
+        timer.innerHTML = '00:00';
     }
     document.querySelector(".disabled-icon-overlay").style.display = "none";
     document.querySelector("audio").pause();
