@@ -165,6 +165,12 @@
                     src="icons8-lock.svg" style="width: 15px;margin: 6px;">End-to-end encrypted<img
                     src="add to contact.png" id="add-con-img" class="disabled-icon" onclick="dioCheckNet()">
             </div>
+             <div id="end-2-end-mess"><span>WhatsApp secures your conversations with end-to-end
+                    encryption. This means your messages, calls and status updates stay between you and the people you
+                    choose. Not even WhatsApp can read or listen to them.</span>
+                <span class="end-2-end-mess-down-btn" style="float: left;" onclick="gowalearnmore()">LEARN MORE</span><span style="float: right;"
+                    class="end-2-end-mess-down-btn" onclick="remEnd2endmess()">OK</span>
+            </div>
 
         </div>
         <span id="username-ctc"
@@ -252,30 +258,53 @@
         }
     }
 
-    function resetTimer() {
-        timer.innerHTML = '00:00';
-    }
-    document.querySelector(".disabled-icon-overlay").style.display = "none";
-    document.querySelector("audio").pause();
-    function dioCheckNet() {
-        document.querySelector(".disabled-icon-overlay").style.display = "block";
-
-    }
-    function delDIO() {
+        function resetTimer() {
+            timer.innerHTML = '00:00';
+        }
         document.querySelector(".disabled-icon-overlay").style.display = "none";
-    }
-    function hangcall() {
-        window.location.href = "index.html";
-    }
-    
-    function loadFile() {
-        var image = document.querySelector('#img-person');
-        image.src = URL.createObjectURL(event.target.files[0]);
+        document.querySelector("audio").pause();
+        function dioCheckNet() {
+            document.querySelector(".disabled-icon-overlay").style.display = "block";
 
-        var image1 = document.querySelector('#img-taken-person');
-        image1.src = URL.createObjectURL(event.target.files[0]);
-    };
+        }
+        function delDIO() {
+            document.querySelector(".disabled-icon-overlay").style.display = "none";
+        }
+        function hangcall() {
+            window.location.href = "index.html";
+        }
 
+        function loadFile() {
+            var image = document.querySelector('#img-person');
+            image.src = URL.createObjectURL(event.target.files[0]);
+
+            var image1 = document.querySelector('#img-taken-person');
+            image1.src = URL.createObjectURL(event.target.files[0]);
+        };
+        document.querySelector("#end-2-end-mess").style.display = "none";
+        function disend2mess() {
+            document.querySelector("#end-2-end-mess").style.display = "block";
+            document.querySelector("#username-ctc").style.opacity = "0.3";
+            document.querySelector("#stopwatch").style.opacity = "0.3"; 
+            document.querySelector("#bottom-call-tool-container").style.opacity = "0.3";
+            document.querySelector("#img-taken-person").style.opacity = "0";
+            document.querySelector("#down-arrow").style.opacity = "0.3";
+            document.querySelector("#add-con-img").style.opacity = "0.3";
+
+        }
+        function remEnd2endmess() {
+            document.querySelector("#end-2-end-mess").style.display = "none";
+            document.querySelector("#username-ctc").style.opacity = "1";
+            document.querySelector("#stopwatch").style.opacity = "1"; 
+            document.querySelector("#bottom-call-tool-container").style.opacity = "1";
+            document.querySelector("#img-taken-person").style.opacity = "1";
+            document.querySelector("#add-con-img").style.opacity = "1";
+            document.querySelector("#down-arrow").style.opacity = "1";
+        }
+        function gowalearnmore() {
+
+            window.location.href = "https://faq.whatsapp.com/general/security-and-privacy/end-to-end-encryption?lang=en"
+        }
 </script>
 
 
