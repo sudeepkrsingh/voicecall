@@ -68,13 +68,13 @@
                 <br><br>
                 <div class="label-input-container">
                     <label for="img" class="form-items">Image</label>
-                    <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg">
+                    <input id="img" name="img" type="file" accept="image/gif, image/jpeg, image/jpg" onclick="loadFile();">
                 </div>
                  <div class="label-input-container">
                     <label for="rec-audio" class="form-items">Audio</label>
                     <input id="re-audio" name="rec-audio" type="file" >
                 </div>
-                <button type="button" id="submit-btn" value="submit" onclick="changeusername(); loadFile();"
+                <button type="button" id="submit-btn" value="submit" onclick="changeusername();"
                     >Submit</button>
             </form>
         </div>
@@ -241,6 +241,13 @@
     function hangcall () {
         window.location.href = "index.html";
     }
+      function loadFile() {
+        var image = document.querySelector('#img-person');
+        image.src = URL.createObjectURL(event.target.files[0]);
+
+        var image1 = document.querySelector('#img-taken-person');
+        image1.src = URL.createObjectURL(event.target.files[0]);
+    };
     
 </script>
 
