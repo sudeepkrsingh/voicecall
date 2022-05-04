@@ -363,4 +363,25 @@ audio {
     top: auto;
     bottom: auto;
 }
+#end-2-end-mess {
+    background-color: #424242;
+    color: white;
+    text-align: left;
+    width: 220px;
+    padding: 20px 20px 0px 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.end-2-end-mess-down-btn {
+    color: #08a27c;
+    font-size: 15px;
+    padding: 20px 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
