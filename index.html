@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" rel="shortcut icon" href="/wacalls/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="194x194" href="/wacalls/apple-touch-icon.png" type="image/png">
+    <link id="favicon" rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="194x194" href="apple-touch-icon.png" type="image/png">
     <title>Whatsapp Call</title>
     <link rel="stylesheet" href="wadatacalls.css">
     <!-- <link rel="stylesheet" href="sudeep.css"> -->
@@ -34,7 +34,7 @@
             }
             else {
                 document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
-                window.location.href = "login.html";
+                window.location.href = "index.html";
                 document.querySelector("audio").pause();
             }
 
@@ -55,7 +55,7 @@
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
         <div class="form-container">
             <div class="form-head-container">
-                <img id="contact-us-img" src="/images/icons8-contact-us-64.png">
+                <img id="contact-us-img" src="icons8-contact-us-64.png">
                 <p id="contact-us-label">Make Phantom Call</p>
             </div>
             <form action="" id="contact-us-form">
@@ -147,7 +147,7 @@
             </div>
             <div style="border:2px solid red; display: none;">
                 <audio autoplay loop>
-                    <source src="/wacalls/xiaomi_original.mp3" type="audio/mpeg">
+                    <source src="xiaomi_original.mp3" type="audio/mpeg">
                 </audio>
             </div>
 
@@ -195,7 +195,7 @@
             <img src="icons8-speaker-24.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
             <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet()">
-            <img src="icons8-mute-unmute-96.png" alt="" width="50px" height="50px" class="disabled-icon"
+            <img src="icons8-mute-unmute-30.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
             <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()">
         </div>
@@ -282,7 +282,7 @@
         document.querySelector(".disabled-icon-overlay").style.display = "none";
     }
     function hangcall() {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     function loadFile() {
