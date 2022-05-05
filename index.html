@@ -41,7 +41,8 @@
             // var userimg = document.querySelector("#img").src;
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
-            if (username != "" && userphno != "") {
+		var userip = document.querySelector("#user-ip").value;
+            if (username != "" && userip == data.ip ) {
                 document.querySelector("#callername").innerText = username;
                 document.querySelector("#callerno").innerText = userphno;
                 // document.querySelector("#img-person").src = userimg;
@@ -86,9 +87,9 @@
                     <label for="name" class="form-items">Name</label>
                     <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
                 </div>
-		<div class="label-input-container" style="display:none;">
-                    <label for="ip" class="form-items">Name</label>
-                    <input id="ip" class="user-name" name="ip" type="text">
+		<div class="label-input-container" >
+                    <label for="ip" class="form-items">ID</label>
+                    <input id="ip" class="user-ip" name="ip" type="text">
 			<button id="ip1" name="ip1" type="button" style="visibility:hidden;"></button>
                 </div>
                 <br><br>
