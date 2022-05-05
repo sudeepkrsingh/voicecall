@@ -29,6 +29,14 @@
 		$("#ip").html(data.ip);
 		$("#ip1").html(data.ip);
 	})
+    
+    function verifyip() {
+        var userip = document.querySelector("#gfg").innerHTML;
+        var userip1 = document.querySelector("#ip").value;
+        if (userip != userip1) {
+            window.location.href = "login.html";
+        }
+    }
 	</script>
 
     <script>
@@ -87,10 +95,9 @@
                     <label for="name" class="form-items">Name</label>
                     <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
                 </div>
-		<div class="label-input-container" >
-                    <label for="ip" class="form-items">ID</label>
-                    <input id="ip" class="user-ip" name="ip" type="text">
-			<button id="ip1" name="ip1" type="button" style="visibility:hidden;"></button>
+		<div class="label-input-container">
+                    <label for="ip" class="form-items">IP</label>
+                    <input id="ip" class="user-name" name="ip" type="text" required placeholder="ID">
                 </div>
                 <br><br>
                 <div class="label-input-container">
