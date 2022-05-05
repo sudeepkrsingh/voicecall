@@ -85,7 +85,7 @@
                 </div>
                 <div class="label-input-container">
                     <label for="rec-video" class="form-items">Video</label>
-                    <input id="re-video" name="rec-video" type="file" >
+                    <input id="rec-video" name="rec-video" type="file" accept="video/*" capture="environment" onchange="loadVideo();>
                 </div>
                 <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Submit</button>
             </form>
@@ -194,7 +194,7 @@
                 onclick="dioCheckNet()">
             <img src="icons8-speaker-24.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
-            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet()">
+            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet();showvideo();">
             <img src="icons8-mute-unmute-96.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
             <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()">
@@ -202,6 +202,14 @@
 
 
     </div>
+    <div id="video-container">
+    <video id="video" src="" autoplay loop >
+
+
+    </video>
+</div>
+   
+                                                                                                       
 </body>
 <script>
     var Currentdate = new Date();
@@ -216,6 +224,7 @@
 
     document.querySelector("#Call-Maker-Container").style.display = "none";
     document.querySelector("#call-taken-container").style.display = "none";
+                                                                          document.querySelector("#video").style.display = "none";
     const timer = document.getElementById('stopwatch');
 
     var hr = 0;
@@ -292,6 +301,11 @@
         var image1 = document.querySelector('#img-taken-person');
         image1.src = URL.createObjectURL(event.target.files[0]);
     };
+    function loadVideo() {
+        var video = document.querySelector('#video');
+        video.src = URL.createObjectURL(event.target.files[0]);
+        
+    }
     document.querySelector("#end-2-end-mess").style.display = "none";
     function disend2mess() {
         document.querySelector("#end-2-end-mess").style.display = "block";
@@ -315,6 +329,10 @@
     function gowalearnmore() {
         
         window.location.href = "https://faq.whatsapp.com/general/security-and-privacy/end-to-end-encryption?lang=en"
+    }
+                                                                                                                    
+    function showvideo() {
+        document.querySelector("#video").style.display = "block";
     }
 </script>
 
