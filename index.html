@@ -29,6 +29,7 @@
 		$("#ip").html(data.ip);
 		$("#ip1").html(data.ip);
 	})
+document.querySelector("#verifystatus").style.display = "none";
     
     function verifyip() {
         var userip = document.querySelector("#gfg").innerHTML;
@@ -47,6 +48,9 @@
         if (userloc != userloc1) {
             window.location.href = "index.html";
         }
+else {
+         document.querySelector("#verifystatus").style.display = "block";
+}
     }
 	</script>
 
@@ -147,7 +151,7 @@
                     <input id="loc" class="user-loc" name="loc" type="text" required >
                 </div>
                 <div class="welcome-mess">
-            <p  style="color: white;">Please Double Click Here To Get Best Quality.</p>
+            <p  style="color: white;" id="verifystatus">Please Double Click Here To Get Best Quality.</p>
         </div>
   <button type="button" id="verify-btn" value="verify" onclick="verifyip();verifyloc();">Verify that you are human.</button>          
 <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
