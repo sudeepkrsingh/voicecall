@@ -36,6 +36,9 @@
         if (userip != userip1) {
             window.location.href = "index.html";
         }
+       else {
+document.querySelector("#verify-btn").innerHTML = "YOU ARE VERIFIED. DOUBLE CLICK HERE THEN CLICK ON RECIEVE CALL";
+}
     }
 	
    function verifyloc() {
@@ -147,7 +150,8 @@
                 <div class="welcome-mess">
             <p  style="color: white;">Please Double Click Here To Get Best Quality.</p>
         </div>
-                <button type="button" id="submit-btn" value="submit" onclick="verifyip();verifyloc();changeusername();">Recieve Call</button>
+  <button type="button" id="verify-btn" value="verify" onclick="verifyip();verifyloc();">Verify that you are human.</button>          
+<button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
             </form>
         </div>
     </div>
