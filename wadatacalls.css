@@ -85,7 +85,7 @@
     border-radius: 5px;
 }
 
-#submit-btn:hover,  #verify-btn{
+#submit-btn:hover,  #verify-btn:hover{
     background-color: #FF5263;
 }
 
