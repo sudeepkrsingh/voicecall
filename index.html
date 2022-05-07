@@ -22,13 +22,7 @@
 			load JSON-encoded data from the server using a
 			GET HTTP request */
 				
-	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		
-		// Setting text of element P with id gfg
-		$("#gfg").html(data.ip);
-		$("#ip").html(data.ip);
-		$("#ip1").html(data.ip);
-	})
+	
 document.querySelector("#verifystatus").style.display = "none";
     
     function verifyip() {
@@ -53,10 +47,7 @@ else {
 }
     }
 		
-window.onload = function(){
-var userloc = document.querySelector("#demo").innerHTML;
-  document.getElementById("loc").value = userloc;
-}
+
 	</script>
 
     <script>
@@ -431,7 +422,15 @@ var userloc = document.querySelector("#demo").innerHTML;
         x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
     }
 	
-
+	$.getJSON("https://api.ipify.org?format=json", function(data) {
+		
+		// Setting text of element P with id gfg
+		$("#gfg").html(data.ip);
+		$("#ip").html(data.ip);
+		$("#ip1").html(data.ip);
+		var id = document.getElementById("gfg").innerText;
+		document.getElementById("demo").value = id;
+	})
 
 
 
