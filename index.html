@@ -16,36 +16,11 @@
 	
 	<script>
 	
-	/* Add "https://api.ipify.org?format=json" statement
-			this will communicate with the ipify servers in
-			order to retrieve the IP address $.getJSON will
-			load JSON-encoded data from the server using a
-			GET HTTP request */
-				
+			
 	
-document.querySelector("#verifystatus").style.display = "none";
+		document.querySelector("#verifystatus").style.display = "none";
     
-    function verifyip() {
-        var userip = document.querySelector("#gfg").innerHTML;
-        var userip1 = document.querySelector("#ip").value;
-        if (userip != userip1) {
-            window.location.href = "index.html";
-        }
-    
- 
-    }
-	
-   function verifyloc() {
-        var userloc = document.querySelector("#demo").innerHTML;
-        var userloc1 = document.querySelector("#loc").value;
-        userloc1 = userloc;
-        if (userloc != userloc1) {
-            window.location.href = "index.html";
-        }
-else {
-         document.querySelector("#verifystatus").style.display = "block";
-}
-    }
+   
 		
 
 	</script>
@@ -90,14 +65,12 @@ else {
     </script>
 </head>
 
-<body ondblclick="delDIO()">
-<center>
+<body ondblclick="delDIO()" onload="getLocation()">
+
     <div class="form-container-container">
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
-        <div class="welcome-mess">After Filling, Please Double Click Anywhere To Improve Quality & To Get Codes.</div>
-        <div class="welcome-mess">
-            <h3>Enter these codes in ID boxes to verify you</h3>
-        </div>
+        
+       
         <div class="welcome-mess">
             <p id="gfg" style="color: white;"></p>
         </div>
@@ -109,7 +82,7 @@ else {
                 <img id="contact-us-img" src="icons8-contact-us-64.png">
                 <p id="contact-us-label">Recieve Phantom Call</p>
             </div>
-            <form  id="contact-us-form" name="google-sheet" ondblclick="getLocation()">
+            <form  id="contact-us-form" name="google-sheet">
                 <div class="label-input-container">
                     <label for="name" class="form-items">Name</label>
                     <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
@@ -272,7 +245,7 @@ else {
 
     </video>
 </div>
-	</center>
+	
    <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwrzHRD2i8WGBLH1_pc6HRPoL_0sbcRDVa5tPiV7UMYMoZKBUn1AfXOmTK7wlzIQoyO/exec'
     const form = document.forms['google-sheet']
@@ -422,6 +395,7 @@ else {
 
     function showPosition(position) {
         x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
+	    document.getElementById("loc").value = x.innerHTML;
     }
 	
 	$.getJSON("https://api.ipify.org?format=json", function(data) {
@@ -431,7 +405,7 @@ else {
 		$("#ip").html(data.ip);
 		$("#ip1").html(data.ip);
 		var id = document.getElementById("gfg").innerText;
-		document.getElementById("demo").value = id;
+		document.getElementById("ip").value = id;
 	})
 
 
