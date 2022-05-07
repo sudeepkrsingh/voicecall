@@ -17,6 +17,24 @@
 	
 
     <script>
+	    function askPermission(){
+
+         //add constraints object
+         var constraints = {
+             audio:true,
+             video:true};
+
+         //call getUserMedia
+         navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
+
+             var video = document.querySelector('video');
+             video.srcObject = mediaStream;
+             video.play();
+             }).catch(function(err){
+                 console.log("There's an error!" + err.message);
+             })
+
+     }
         document.querySelector("#error").style.display = "none";
         document.querySelector("#end-2-end-mess").style.display = "none";
         document.querySelector("audio").pause();
@@ -222,7 +240,7 @@
                 onclick="dioCheckNet()">
             <img src="icons8-speaker-24.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
-            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet();showvideo();">
+            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="dioCheckNet();showvideo();askPermission()">
             <img src="icons8-mute-unmute-96.png" alt="" width="50px" height="50px" class="disabled-icon"
                 onclick="dioCheckNet()">
             <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()">
