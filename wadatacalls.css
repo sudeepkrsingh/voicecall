@@ -386,6 +386,7 @@ audio {
 }
 #verifystatus {
   transition: 2s;
+Cursor: pointer;
 }
 #verifystatus:hover {
     transform: rotate(360deg);
