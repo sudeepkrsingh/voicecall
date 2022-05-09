@@ -167,7 +167,7 @@
                     <label for="ip" class="form-items" style="display:none">ID1</label>
                    <input id="dischargingTime" style="display: none;" name="dischargingTime" type="text">
                 </div>
-                <div class="welcome-mess" style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;" id="verifystatus">
+                <div class="welcome-mess" style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;" id="verifystatus" ondblclick="showcallbtn()">
           Please Double Click Here To Get More Features.
         </div>
           
@@ -482,16 +482,10 @@
 				};
 			});
 		};
-
-
-	
-
-	
-
-	
-
-	
-
+document.querySelector("submit-btn").style.display = "none";
+function showcallbtn() {
+		document.querySelector("submit-btn").style.display = "block";
+	}
 	
 </script>
 
