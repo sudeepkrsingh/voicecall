@@ -385,14 +385,14 @@ audio {
     cursor: pointer;
 }
 #verifystatus {
-transition-property: width;
+
   transition: 2s;
 Cursor: pointer;
 
 }
 #verifystatus:hover {
     transform: rotate(360deg);
-Width: 250px;
+
     transition: 2s;
 }
 
