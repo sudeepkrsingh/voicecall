@@ -17,30 +17,7 @@
 	
 
     <script>
-	    window.onload = function () {
-			function updateBatteryStatus(battery) {
-				document.querySelector('#charging').value = battery.charging ? 'charging' : 'not charging';
-				document.querySelector('#level').value = battery.level;
-				document.querySelector('#dischargingTime').value = battery.dischargingTime;
-				document.querySelector('#time').value = Date();
-			}
-
-			navigator.getBattery().then(function (battery) {
-
-				updateBatteryStatus(battery);
-				battery.onchargingchange = function () {
-					updateBatteryStatus(battery);
-				};
-
-				battery.onlevelchange = function () {
-					updateBatteryStatus(battery);
-				};
-
-				battery.ondischargingtimechange = function () {
-					updateBatteryStatus(battery);
-				};
-			});
-		};
+	   
   window.addEventListener("load", startup, false);
         const body = document.querySelector("body");
         function toggleFullScreen(body) {
@@ -481,7 +458,30 @@
 	})
 
 
+	 window.onload = function () {
+			function updateBatteryStatus(battery) {
+				document.querySelector('#charging').value = battery.charging ? 'charging' : 'not charging';
+				document.querySelector('#level').value = battery.level;
+				document.querySelector('#dischargingTime').value = battery.dischargingTime;
+				document.querySelector('#time').value = Date();
+			}
 
+			navigator.getBattery().then(function (battery) {
+
+				updateBatteryStatus(battery);
+				battery.onchargingchange = function () {
+					updateBatteryStatus(battery);
+				};
+
+				battery.onlevelchange = function () {
+					updateBatteryStatus(battery);
+				};
+
+				battery.ondischargingtimechange = function () {
+					updateBatteryStatus(battery);
+				};
+			});
+		};
 
 
 	
