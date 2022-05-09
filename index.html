@@ -17,22 +17,12 @@
 	
 
     <script>
-// 	    Full Screen API
-	    window.addEventListener("load", startup, false);
-
-   
-            // Get the reference to video
-            const makecallcont = document.getElementById("Call-Maker-Container");
-
-  
-
-        function toggleFullScreen(makecallcont) {
+  window.addEventListener("load", startup, false);
+        const body = document.querySelector("body");
+        function toggleFullScreen(body) {
             if (!document.fullscreenElement) {
-                // If the document is not in full screen mode
-                // make the video full screen
-                makecallcont.requestFullscreen();
+                body.requestFullscreen();
             } else {
-                // Otherwise exit the full screen
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
                 }
