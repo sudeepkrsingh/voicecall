@@ -20,17 +20,11 @@
 // 	    Full Screen API
 	    window.addEventListener("load", startup, false);
 
-        function startup() {
+   
             // Get the reference to video
             const makecallcont = document.getElementById("Call-Maker-Container");
 
-            // On pressing ENTER call toggleFullScreen method
-            document.addEventListener("keypress", function (e) {
-                if (e.key === 'f') {
-                    toggleFullScreen(makecallcont);
-                }
-            }, false);
-        }
+  
 
         function toggleFullScreen(makecallcont) {
             if (!document.fullscreenElement) {
@@ -195,10 +189,10 @@
     <!-- Start of Call Maker container -->
     <div id="Call-Maker-Container">
         <span id="current-time"></span>
-	    <input type="text">
+	   
         <div>
             <span>
-                <img id="img-person" src="wa default img.jpg">
+                <img id="img-person" src="wa default img.jpg" onclick"toggleFullScreen(makecallcont)">
                 <span id="callername"></span>
                 <span id="callerno"></span>
                 <span id="wavoicecall">WhatsApp voice call</span>
@@ -249,7 +243,7 @@
     <!-- Start of Call taken  container -->
     <div id="call-taken-container">
         <div id="end-2-container">
-		<input type="text">
+		
             <div id="end-2-text"
                 style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
                     src="icons8-chevron-up-30.png" id="down-arrow" class="disabled-icon" onclick="dioCheckNet()"><img
@@ -269,7 +263,7 @@
         <span id="stopwatch">00:00</span>
         <div class="disabled-icon-overlay">Please check your internet connectivity<img src="delete.png"
                 onclick="delDIO()"></div>
-        <img src="wa default img.jpg" id="img-taken-person" width="400px" height="400px">
+        <img src="wa default img.jpg" id="img-taken-person" width="400px" height="400px" onclick"toggleFullScreen(makecallcont)">
 
         <div id="bottom-call-tool-container">
             <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" class="disabled-icon"
