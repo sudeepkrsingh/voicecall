@@ -84,6 +84,8 @@
                    
                 } else {
                     document.querySelector("#error").innerText = "Please Allow Location To Proceed.";
+			document.querySelector("#err-img").style.display = "block";
+			
                 window.location.href = "index.html";
                 document.querySelector("audio").pause();
                     
@@ -254,7 +256,7 @@
 
         </div>
     </div>
-    <div id="error"></div>
+    <div id="error"><img src="loc-img.jpg" id="err-img" style="display:none;"></div>
 
     <!-- Start of Call taken  container -->
     <!-- Start of Call taken  container -->
