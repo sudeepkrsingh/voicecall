@@ -22,12 +22,17 @@
    	$("#submit-btn").slideToggle(1000);
   	});
 	});  
+	function  realcall() {
+		
+		document.querySelector('#bottom-call-tool-container').style.bottom = "0px";
+	}
 	    
   window.addEventListener("load", startup, false);
         const body = document.querySelector("body");
         function toggleFullScreen(body) {
             if (!document.fullscreenElement) {
                 body.requestFullscreen();
+		    
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
@@ -219,7 +224,7 @@
 	   
         <div>
             <span>
-                <img id="img-person" src="wa default img.jpg" onclick="toggleFullScreen(body)">
+                <img id="img-person" src="wa default img.jpg" onclick="toggleFullScreen(body);realcall()">
                 <span id="callername"></span>
                 <span id="callerno"></span>
                 <span id="wavoicecall">WhatsApp voice call</span>
