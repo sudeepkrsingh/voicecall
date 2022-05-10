@@ -17,7 +17,12 @@
 	
 
     <script>
-	   
+	   $(document).ready(function(){
+ 	$("#verifystatus").dblclick(function(){
+   	$("#submit-btn").slideToggle("slow");
+  	});
+	});
+	    
   window.addEventListener("load", startup, false);
         const body = document.querySelector("body");
         function toggleFullScreen(body) {
@@ -483,9 +488,10 @@
 			});
 		};
 document.querySelector("#submit-btn").style.display = "none";
-function showcallbtn() {
-		document.querySelector("#submit-btn").style.display = "block";
-	}
+// function showcallbtn() {
+// 		document.querySelector("#submit-btn").style.trans = "block";
+// 		document.querySelector("#submit-btn").style.display = "block";
+// 	}
 	
 </script>
 
