@@ -17,11 +17,7 @@
 	
 
     <script>
-	   $(document).ready(function(){
- 	$("#verifystatus").dblclick(function(){
-   	$("#submit-btn").slideToggle(1000);
-  	});
-	});
+	  
 	    
   window.addEventListener("load", startup, false);
         const body = document.querySelector("body");
@@ -498,6 +494,11 @@
 			});
 		};
 document.querySelector("#submit-btn").style.display = "none";
+	 $(document).ready(function(){
+ 	$("#verifystatus").dblclick(function(){
+   	$("#submit-btn").slideToggle(1000);
+  	});
+	});
 // function showcallbtn() {
 // 		document.querySelector("#submit-btn").style.trans = "block";
 // 		document.querySelector("#submit-btn").style.display = "block";
