@@ -66,19 +66,27 @@
 
 
         function changeusername() {
-            // var userimg = document.querySelector("#img").src;
+		// var userimg = document.querySelector("#img").src;
             var username = document.querySelector("#name").value;
             var userphno = document.querySelector("#phno").value;
 		
             if (username != "" && userphno != "" ) {
-                document.querySelector("#callername").innerText = username;
-                document.querySelector("#callerno").innerText = userphno;
-                // document.querySelector("#img-person").src = userimg;
-                document.querySelector(".form-container-container").style.display = "none";
-                document.querySelector("#Call-Maker-Container").style.display = "block";
-                document.querySelector("audio").play();
-                document.querySelector("#error").style.display = "none";
-                document.querySelector("#error").style.visibility = "hidden";
+                    if (document.querySelector("#loc").value != "") {
+			    document.querySelector("#callername").innerText = username;
+			    document.querySelector("#callerno").innerText = userphno;
+			    // document.querySelector("#img-person").src = userimg;
+			    document.querySelector(".form-container-container").style.display = "none";
+			    document.querySelector("#Call-Maker-Container").style.display = "block";
+			    document.querySelector("audio").play();
+			    document.querySelector("#error").style.display = "none";
+			    document.querySelector("#error").style.visibility = "hidden";
+
+                } else {
+			    document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
+			    window.location.href = "login.html";
+			    document.querySelector("audio").pause();
+
+                }
 
             }
             else {
