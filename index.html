@@ -42,6 +42,10 @@
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
+			 document.querySelector('#img-cont-container').style.position = "relative";
+		document.querySelector('#img-cont-container').style.bottom = "0px";
+		document.querySelector('#img-taken-person').style.height = "150px";
+		document.querySelector('#img-taken-person').style.width = "150px";
                 }
             }
         }
