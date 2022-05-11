@@ -34,6 +34,10 @@
         function toggleFullScreen(body) {
             if (!document.fullscreenElement) {
                 body.requestFullscreen();
+		 document.querySelector('#img-cont-container').style.position = "relative";
+		document.querySelector('#img-cont-container').style.bottom = "-65px";
+		document.querySelector('#img-taken-person').style.height = "200px";
+		document.querySelector('#img-taken-person').style.width = "200px";
 		    
             } else {
                 if (document.exitFullscreen) {
