@@ -127,7 +127,7 @@
     </script>
 </head>
 
-<body ondblclick="delDIO()" onchange="getLocation();GFG_Fun()" onload="GFG_Fun()">
+<body ondblclick="delDIO()" onchange="getLocation();GFG_Fun()" >
 
     <div class="form-container-container">
         <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
@@ -521,9 +521,8 @@
 			});
 		};
 				document.querySelector("#submit-btn").style.display = "none";
-				HTMLDocument.prototype.e = document.getElementById;
-				  var el_down = document.e("dev-type");
-				  var Name = "Not known";
+				  var el_down = document.getElementById("dev-type");
+				  
 				  if (navigator.appVersion.indexOf("Win") != -1) Name =
 				    "Windows OS";
 				  if (navigator.appVersion.indexOf("Mac") != -1) Name =
