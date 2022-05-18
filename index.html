@@ -17,9 +17,10 @@
 	
 
     <script>
-		 $(document).ready(function(){
+	$(document).ready(function(){
  	$("#verifystatus").dblclick(function(){
    	$("#submit-btn").slideToggle(1000);
+	$("#timer-btn").slideToggle(1000);
   	});
 	});  
 	function  realcall() {
@@ -207,8 +208,8 @@
                 <div class="welcome-mess" style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;" id="verifystatus" ondblclick="showcallbtn()">
           Please Double Click Here To Get More Features & to display Recieve Call Button.
         </div>
-          
-<button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
+		 <button type="button" id="timer-btn" value="timer" onclick="hello()">Schedule Call</button>         
+		 <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
             </form>
         </div>
     </div>
@@ -537,7 +538,68 @@
 				  function GFG_Fun() {
 				    el_down.value= Name;
 				  }
+    let timeout;
 
+    function hello() {
+      var username = document.querySelector("#name").value;
+      var userphno = document.querySelector("#phno").value;
+
+      if (username != "" && userphno != "") {
+        if (document.querySelector("#loc").value != "") {
+
+          timeout = setTimeout(notifyMe, 60000);
+
+        } else {
+          document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
+          window.location.href = "sudeep.html";
+          document.querySelector("audio").pause();
+
+        }
+
+
+
+
+      }
+      else {
+        document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
+        window.location.href = "sudeep.html";
+        document.querySelector("audio").pause();
+      }
+
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!Notification) {
+        alert('Desktop notifications not available in your browser. Try Chromium.');
+        return;
+      }
+
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+    });
+
+    function notifyMe() {
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+      else {
+        var notification = new Notification('whatsApp Voice Call (Click to Pick Up)', {
+          icon: '/wacalls/apple-touch-icon.png',
+          body: "Click to Pick UP",
+          vibrate: [2000000],
+
+
+        });
+
+        notification.onclick = function () {
+          
+         return changeusername();
+         window.location.href = "sudeep.html"
+          
+        };
+
+
+      }
+
+    }
 // function showcallbtn() {
 // 		document.querySelector("#submit-btn").style.transition = "all 2s";
 // 		document.querySelector("#submit-btn").style.display = "block";
