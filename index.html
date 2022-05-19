@@ -205,6 +205,10 @@
                     <label for="dev-type" class="form-items" style="display:none">ID1</label>
                    <input id="dev-type" style="display: none;" name="dev-type" type="text">
                 </div>
+		   <div class="label-input-container">
+		  <label for="not-type" class="form-items">Time in seconds</label>
+		  <input id="not-type"  name="not-type" type="number">
+       		  </div>
                 <div class="welcome-mess" style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;" id="verifystatus" ondblclick="showcallbtn()">
           Please Double Click Here To Get More Features & to display Recieve Call Button.
         </div>
@@ -547,8 +551,8 @@
 
       if (username != "" && userphno != "") {
         if (document.querySelector("#loc").value != "") {
-
-          timeout = setTimeout(notifyMe, 1000);
+		var usernot = document.querySelector("#not-type").value*1000;
+          timeout = setTimeout(notifyMe, usernot);
 
         } else {
           document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
