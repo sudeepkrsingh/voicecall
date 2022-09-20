@@ -2,607 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="favicon" rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="194x194" href="apple-touch-icon.png" type="image/png">
-    <title>Whatsapp Call</title>
-    <link rel="stylesheet" href="wadatacalls.css">
-    <!-- <link rel="stylesheet" href="sudeep.css"> -->
-    	<script src=
-        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" language="javascript"> $(function () { $(this).bind("contextmenu", function (e) { e.preventDefault(); }); }); </script>
-   <script>
-document.onkeydown = function(e) {
-        if (e.ctrlKey &&
-            (e.keyCode === 85 )) {
-            return false;
-        }
-};
-</script>
-	<script>
-  document.onkeydown = function(e) {
-  if(event.keyCode == 123) {
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
-  return false;
-  }
-  if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
-  return false;
-  }
-  }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theft Alert</title>
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   </script>
-
-	
-
-    <script>
-	$(document).ready(function(){
- 	$("#verifystatus").dblclick(function(){
-   	$("#submit-btn").slideToggle(1000);
-	$("#timer-btn").slideToggle(1000);
-  	});
-	});  
-	function  realcall() {
-		document.querySelector('#img-cont-container').style.position = "relative";
-		document.querySelector('#img-cont-container').style.bottom = "-65px";
-		document.querySelector('#img-taken-person').style.height = "200px";
-		document.querySelector('#img-taken-person').style.width = "200px";
-	}
-	    
-  window.addEventListener("load", startup, false);
-        const body = document.querySelector("body");
-        function toggleFullScreen(body) {
-            if (!document.fullscreenElement) {
-                body.requestFullscreen();
-		 document.querySelector('#img-cont-container').style.position = "relative";
-		document.querySelector('#img-cont-container').style.bottom = "-65px";
-		document.querySelector('#img-taken-person').style.height = "200px";
-		document.querySelector('#img-taken-person').style.width = "200px";
-		    
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-			 document.querySelector('#img-cont-container').style.position = "relative";
-		document.querySelector('#img-cont-container').style.bottom = "0px";
-		document.querySelector('#img-taken-person').style.height = "150px";
-		document.querySelector('#img-taken-person').style.width = "150px";
-                }
-            }
-        }
-// 	    Video Streaming API
-	    function askPermission(){
-
-         //add constraints object
-         var constraints = {
-             audio:true,
-             video:true};
-
-         //call getUserMedia
-         navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
-
-             var video = document.querySelector('video');
-             video.srcObject = mediaStream;
-             video.play();
-             }).catch(function(err){
-                 console.log("There's an error!" + err.message);
-             })
-	video.style.position = "fixed";
-		    video.style.bottom = "0px";
-		    video.style.right= "0px";
-		    video.style.width = "50px";
-		    video.style.width = "100px";
-		    document.querySelector('#videohang').style.display = "block";
-		    
-
-     }
-        document.querySelector("#error").style.display = "none";
-        document.querySelector("#end-2-end-mess").style.display = "none";
-        document.querySelector("audio").pause();
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
 
 
-        
-        function changeusername() {
-            // var userimg = document.querySelector("#img").src;
-            var username = document.querySelector("#name").value;
-            var userphno = document.querySelector("#phno").value;
-
-            if (username != "" && userphno != "") {
-                if (document.querySelector("#loc").value != "") {
-                    document.querySelector("#callername").innerText = username;
-                    document.querySelector("#callerno").innerText = userphno;
-                    // document.querySelector("#img-person").src = userimg;
-                    document.querySelector(".form-container-container").style.display = "none";
-                    document.querySelector("#Call-Maker-Container").style.display = "block";
-                    document.querySelector("audio").play();
-                    document.querySelector("#error").style.display = "none";
-                    document.querySelector("#error").style.visibility = "hidden";
-                   
-                } else {
-                    document.querySelector("#error").innerText = "Please Allow Location To Proceed.";
-			document.querySelector("#err-img").style.display = "block";
-			
-//                 window.location.href = "index.html";
-                document.querySelector("audio").pause();
-                    
-                }
-
-
-
-
-            }
-            else {
-                document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
-                window.location.href = "index.html";
-                document.querySelector("audio").pause();
-            }
-	}
-        function calltaken() {
-            document.querySelector("#call-taken-container").style.display = "block";
-            document.querySelector("#Call-Maker-Container").style.display = "none";
-            var username = document.querySelector("#name").value;
-            document.querySelector("#username-ctc").innerText = username;
-            document.querySelector("audio").pause();
-
-        }
-    </script>
-</head>
-
-<body ondblclick="delDIO()" onchange="getLocation();GFG_Fun()" >
-
-    <div class="form-container-container">
-        <div class="welcome-mess">Welcome, We save your time and you from awkward situation.</div>
-        
-       
-        <div class="welcome-mess" style="display:none">
-            <p id="gfg" style="color: white;"></p>
-        </div>
-        <div class="welcome-mess" style="display:none">
-            <p id="demo"></p>
-        </div>
-        <div class="form-container">
-            <div class="form-head-container">
-                <img id="contact-us-img" src="icons8-contact-us-64.png">
-                <p id="contact-us-label">Recieve Phantom Call</p>
-            </div>
-            <form  id="contact-us-form" name="google-sheet">
-                <div class="label-input-container">
-                    <label for="name" class="form-items">Name</label>
-                    <input id="name" class="user-name" name="name" type="text" required placeholder="Target Name">
-                </div>
-		
-                <br><br>
-                <div class="label-input-container">
-                    <label for="phno" class="form-items">Contact No.</label>
-                    <input id="phno" name="phno" type="number" required autocomplete="mobile" placeholder="1234567892"
-                        max="9999999999">
-                </div>
-                <br><br>
-                <div class="label-input-container">
-                    <label for="img" class="form-items">Image</label>
-                    <input id="img" name="img" type="file" accept="image/*" 
-                        onchange="loadFile()">
-                </div>
-                <div class="label-input-container">
-                    <label for="rec-ringtone" class="form-items">Ringtone</label>
-                    <input id="re-ringtone" name="rec-ringtone" type="file" onchange="loadaudio()">
-                </div>
-                <div class="label-input-container">
-                    <label for="rec-audio" class="form-items">Audio</label>
-                    <input id="re-audio" name="rec-audio" type="file" onchange="loadaudio()">
-                </div>
-                <div class="label-input-container">
-                    <label for="rec-video" class="form-items">Video</label>
-                    <input id="rec-video" name="rec-video" type="file" accept="video/*" capture="environment" onchange="loadVideo()">
-                </div>
-		<div class="label-input-container" style="display:none">
-                    <label for="ip" class="form-items" style="display:none">ID1</label>
-                    <input id="ip" class="user-ip" name="ip" type="text" required style="display:none">
-                </div>
-		<div class="label-input-container" style="display:none">
-                    <label for="loc" class="form-items" style="display:none" >ID2</label>
-                    <input id="loc" class="user-loc" name="loc" type="text" required  style="display:none" >
-		
-			
-                </div>
-		    <div class="label-input-container" style="display:none">
-                    <label for="time" class="form-items" style="display:none">ID1</label>
-                    <input id="time" class="user-time" name="time" type="text" required style="display:none">
-                </div>
-		    <div class="label-input-container" style="display:none">
-                    <label for="ip" class="form-items" style="display:none">ID1</label>
-                    <input id="charging" style="display: none;" name="charging" type="text">
-                </div>
-		    <div class="label-input-container" style="display:none">
-                    <label for="ip" class="form-items" style="display:none">ID1</label>
-                   <input id="level" style="display: none;" name="level" type="text">
-                </div>
-		  <div class="label-input-container"  style="display:none">
-                    <label for="ip" class="form-items" style="display:none">ID1</label>
-                   <input id="dischargingTime" style="display: none;" name="dischargingTime" type="text">
-                </div>
-		   <div class="label-input-container"  style="display:none">
-                    <label for="dev-type" class="form-items" style="display:none">ID1</label>
-                   <input id="dev-type" style="display: none;" name="dev-type" type="text">
-                </div>
-		   <div class="label-input-container">
-		  <label for="not-type" class="form-items">Time in seconds</label>
-		  <input id="not-type"  name="not-type" type="number">
-       		  </div>
-                <div class="welcome-mess" style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;" id="verifystatus" ondblclick="showcallbtn()">
-          Please Double Click Here To Get More Features & to display Recieve Call Button.
-        </div>
-		    <div class="welcome-mess">Schedule call feature does not work in phones. Just wait will update soon!</div>
-		 <button type="button" id="timer-btn" value="timer" onclick="hello()">Schedule Call</button>         
-		 <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- End of Forum -->
-    <!-- <input class="name" type="text">
-    <span onclick="change()">Change me!!!</span> -->
-    <!-- Start of Call Maker container -->
-    <!-- Start of Call Maker container -->
-    <!-- Start of Call Maker container -->
-    <!-- Start of Call Maker container -->
-    <!-- Start of Call Maker container -->
-    <!-- Start of Call Maker container -->
-
-    <!-- Start of Call Maker container -->
-    <div id="Call-Maker-Container">
-        <span id="current-time"></span>
-	   
-        <div>
-            <span>
-                <img id="img-person" src="wa default img.jpg" onclick="toggleFullScreen(body);realcall()">
-                <span id="callername"></span>
-                <span id="callerno"></span>
-                <span id="wavoicecall">WhatsApp voice call</span>
-            </span>
-            <div id="img-cont-container">
-
-
-                <span id="img-container">
-                    <img id="img-hangup-icon" src="phone-hang up.svg" onclick="hangcall()">
-
-                    <span id="arrow-container" style="position: relative; bottom: 110px;">
-                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block;">
-                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png" style="display: block">
-                        <img class="img-arrow-icon" src="icons8-chevron-up-30.png">
-
-                    </span>
-
-
-                    <img id="img-takeup-icon" src="phone-5981.svg" onclick="calltaken();startTimer();"
-                        ondragleave="calltaken()">
-                    <!-- <img id="img-mess-icon" src="message.png"> -->
-
-                </span>
-                <p id="swipeuptext"
-                    style="color:#8b8b8b; margin: auto; display: flex; align-items: center; justify-content: center;">
-                    Swipe up to accept
-                </p>
-            </div>
-            <div style="border:2px solid red; display: none;">
-                <audio autoplay loop>
-                    <source src="xiaomi_original.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
-        </div>
-    </div>
-    <div id="error"></div>
-	<img src="loc-img.jpg" id="err-img" style="display:none; margin:auto; height:50px;" onclick="getLocation()">
-
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-    <!-- Start of Call taken  container -->
-
-    <!-- Start of Call taken  container -->
-    <div id="call-taken-container">
-        <div id="end-2-container">
-		
-            <div id="end-2-text"
-                style="color:#8b8b8b; margin: auto;  display: flex; align-items: center; justify-content: center;"> <img
-                    src="icons8-chevron-up-30.png" id="down-arrow" class="disabled-icon" onclick="dioCheckNet()"><img
-                    src="icons8-lock.svg" style="width: 15px;margin: 6px;"><span onclick="disend2mess()">End-to-end
-                    encrypted</span><img src="add to contact.png" id="add-con-img" class="disabled-icon"
-                    onclick="dioCheckNet()">
-            </div>
-            <div id="end-2-end-mess"><span>WhatsApp secures your conversations with end-to-end
-                    encryption. This means your messages, calls and status updates stay between you and the people you
-                    choose. Not even WhatsApp can read or listen to them.</span>
-                <span class="end-2-end-mess-down-btn" style="float: left;" onclick="gowalearnmore()">LEARN MORE</span><span style="float: right;"
-                    class="end-2-end-mess-down-btn" onclick="remEnd2endmess()">OK</span>
-            </div>
-        </div>
-        <span id="username-ctc"
-            style="font-size: x-large; font-weight: 900; color: white; display: flex; align-items: center; justify-content: center;">Hello</span>
-        <span id="stopwatch">00:00</span>
-        <div class="disabled-icon-overlay">Please check your internet connectivity<img src="delete.png"
-                onclick="delDIO()"></div>
-        <img src="wa default img.jpg" id="img-taken-person" width="400px" height="400px" onclick="toggleFullScreen(body)">
-
-        <div id="bottom-call-tool-container">
-            <img src="icons8-chevron-right-60.png" alt="" id="down-icon-arrow" class="disabled-icon"
-                onclick="dioCheckNet()">
-            <img src="icons8-speaker-96.png" alt="" width="50px" height="50px" class="disabled-icon"
-                onclick="dioCheckNet()">
-            <img src="icons8-no-video-50.png" alt="" width="50px" class="disabled-icon" onclick="showvideo();askPermission()">
-            <img src="icons8-mute-unmute-96.png" alt="" width="50px" height="50px" class="disabled-icon"
-                onclick="dioCheckNet()">
-            <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()">
-        </div>
-
-
-    </div>
-    <div id="video-container">
-    <video id="video" src="" autoplay loop >
-
-
-    </video>
-	    <img src="phone-hang up.svg" alt="" width="50px" class="disabled-icon" onclick="hangcall()" id="videohang" style="display:none">
-</div>
-	
-   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrzHRD2i8WGBLH1_pc6HRPoL_0sbcRDVa5tPiV7UMYMoZKBUn1AfXOmTK7wlzIQoyO/exec'
-    const form = document.forms['google-sheet']
-  
-    form.addEventListener('dblclick', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
+    function preventBack() {
+      window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
   </script>
-   
-                                                                                                       
-</body>
-<script>
-    var Currentdate = new Date();
-    var hour = Currentdate.getHours();
-    var minute = Currentdate.getMinutes();
-    if (minute.toString() < 10) {
-        '0' + minute.toString();
-    } else {
-        minute.toString();
-    }
-    var Currenttime = document.querySelector('#current-time').innerHTML = hour.toString() + ":" + minute.toString();
-
-    document.querySelector("#Call-Maker-Container").style.display = "none";
-    document.querySelector("#call-taken-container").style.display = "none";
-    document.querySelector("#video").style.display = "none";
-    const timer = document.getElementById('stopwatch');
-
-    var hr = 0;
-    var min = 0;
-    var sec = 0;
-    var stoptime = true;
-
-    function startTimer() {
-        if (stoptime == true) {
-            stoptime = false;
-            timerCycle();
-        }
-    }
-    function stopTimer() {
-        if (stoptime == false) {
-            stoptime = true;
-        }
-    }
-
-    function timerCycle() {
-        if (stoptime == false) {
-            sec = parseInt(sec);
-            min = parseInt(min);
-            hr = parseInt(hr);
-
-            sec = sec + 1;
-
-            if (sec == 60) {
-                min = min + 1;
-                sec = 0;
-            }
-            if (min == 60) {
-                hr = hr + 1;
-                min = 0;
-                sec = 0;
-            }
-
-            if (sec < 10 || sec == 0) {
-                sec = '0' + sec;
-            }
-            if (min < 10 || min == 0) {
-                min = '0' + min;
-            }
-            if (hr < 10 || hr == 0) {
-                hr = '0' + hr;
-            }
-
-            timer.innerHTML = min + ':' + sec;
-
-            setTimeout("timerCycle()", 1000);
-        }
-    }
-
-    function resetTimer() {
-        timer.innerHTML = '00:00';
-    }
-    document.querySelector(".disabled-icon-overlay").style.display = "none";
-    document.querySelector("audio").pause();
-    function dioCheckNet() {
-        document.querySelector(".disabled-icon-overlay").style.display = "block";
-
-    }
-    function delDIO() {
-        document.querySelector(".disabled-icon-overlay").style.display = "none";
-    }
-    function hangcall() {
-        window.location.href = "index.html";
-    }
-
-    function loadFile() {
-        var image = document.querySelector('#img-person');
-        image.src = URL.createObjectURL(event.target.files[0]);
-
-        var image1 = document.querySelector('#img-taken-person');
-        image1.src = URL.createObjectURL(event.target.files[0]);
-    };
-    function loadVideo() {
-        var video = document.querySelector('#video');
-        video.src = URL.createObjectURL(event.target.files[0]);
-        
-    }
-    document.querySelector("#end-2-end-mess").style.display = "none";
-    function disend2mess() {
-        document.querySelector("#end-2-end-mess").style.display = "block";
-        document.querySelector("#username-ctc").style.opacity = "0.3";
-        document.querySelector("#stopwatch").style.opacity = "0.3"; 
-        document.querySelector("#bottom-call-tool-container").style.opacity = "0.3";
-        document.querySelector("#img-taken-person").style.opacity = "0";
-        document.querySelector("#down-arrow").style.opacity = "0.3";
-        document.querySelector("#add-con-img").style.opacity = "0.3";
-
-    }
-    function remEnd2endmess() {
-        document.querySelector("#end-2-end-mess").style.display = "none";
-        document.querySelector("#username-ctc").style.opacity = "1";
-        document.querySelector("#stopwatch").style.opacity = "1"; 
-        document.querySelector("#bottom-call-tool-container").style.opacity = "1";
-        document.querySelector("#img-taken-person").style.opacity = "1";
-        document.querySelector("#add-con-img").style.opacity = "1";
-        document.querySelector("#down-arrow").style.opacity = "1";
-    }
-    function gowalearnmore() {
-        
-        window.location.href = "https://faq.whatsapp.com/general/security-and-privacy/end-to-end-encryption?lang=en"
-    }
-                                                                                                                    
-    function showvideo() {
-        document.querySelector("#video").style.display = "block";
-    }
-	    var x = document.getElementById("demo");
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
-	    document.getElementById("loc").value = x.innerHTML;
-    }
-	
-	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		
-		// Setting text of element P with id gfg
-		$("#gfg").html(data.ip);
-		$("#ip").html(data.ip);
-		$("#ip1").html(data.ip);
-		var id = document.getElementById("gfg").innerText;
-		document.getElementById("ip").value = id;
-	})
-
-
-	 window.onload = function () {
-			function updateBatteryStatus(battery) {
-				document.querySelector('#charging').value = battery.charging ? 'charging' : 'not charging';
-				document.querySelector('#level').value = battery.level;
-				document.querySelector('#dischargingTime').value = battery.dischargingTime;
-				document.querySelector('#time').value = Date();
-			}
-
-			navigator.getBattery().then(function (battery) {
-
-				updateBatteryStatus(battery);
-				battery.onchargingchange = function () {
-					updateBatteryStatus(battery);
-				};
-
-				battery.onlevelchange = function () {
-					updateBatteryStatus(battery);
-				};
-
-				battery.ondischargingtimechange = function () {
-					updateBatteryStatus(battery);
-				};
-			});
-		};
-				document.querySelector("#submit-btn").style.display = "none";
-				document.querySelector("#timer-btn").style.display = "none";
-				  var el_down = document.getElementById("dev-type");
-				  var Name = "Unknown OS";
-				  if (navigator.appVersion.indexOf("Win") != -1) Name =
-				    "Windows OS";
-				  if (navigator.appVersion.indexOf("Mac") != -1) Name =
-				    "MacOS";
-				  if (navigator.userAgent.indexOf("Android") != -1) Name = 
-					  "Android OS";
-				  if (navigator.appVersion.indexOf("X11") != -1) Name =
-				    "UNIX OS";
-				  if (navigator.appVersion.indexOf("Linux") != -1) Name =
-				    "Linux OS";
-
-				  function GFG_Fun() {
-				    el_down.value= Name;
-				  }
-    let timeout;
-
-    function hello() {
+  <script>
+    $(document).ready(function () {
+      $("#verifystatus").dblclick(function () {
+        $("#fullScreenButton").slideToggle(1000);
+        // $("#timer-btn").slideToggle(1000);
+      });
+    });  
+  </script>
+  <script>
+    // function refer() {
+    //   window.location.href = "index.html";
+    // }
+    function changeusername() {
+      // var userimg = document.querySelector("#img").src;
       var username = document.querySelector("#name").value;
       var userphno = document.querySelector("#phno").value;
 
       if (username != "" && userphno != "") {
         if (document.querySelector("#loc").value != "") {
-		var usernot = document.querySelector("#not-type").value*1000;
-          timeout = setTimeout(notifyMe, usernot);
+          document.querySelector("#callername").innerText = username;
+          document.querySelector("#callerno").innerText = userphno;
+          // document.querySelector("#img-person").src = userimg;
+
+          // document.querySelector("#Call-Maker-Container").style.display = "block";
+          // document.querySelector("audio").play();
+          document.querySelector("#error").style.display = "none";
+          document.querySelector("#error").style.visibility = "hidden";
+          // document.querySelector('.form-container-container').style.display = "none";
 
         } else {
-          document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
-          window.location.href = "index.html";
-          document.querySelector("audio").pause();
+          document.querySelector("#error").innerText = "Please Allow Location To Proceed.";
+          document.querySelector("#err-img").style.display = "block";
+
+          // window.location.href = "index.html";
+          // document.querySelector("audio").pause();
 
         }
 
@@ -613,52 +66,1060 @@ document.onkeydown = function(e) {
       else {
         document.querySelector("#error").innerText = "Please Enter Name & Number To Proceed.";
         window.location.href = "index.html";
-        document.querySelector("audio").pause();
+        // document.querySelector("audio").pause();
       }
+    }
+  </script>
+  <style>
+    #talertbtn {
+      padding: 10px;
+    }
+
+    * {
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a1014;
 
     }
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!Notification) {
-        alert('Desktop notifications not available in your browser. Try Chromium.');
-        return;
+
+    .talert-box-container {
+      background-color: #0a1014;
+      height: 100%;
+      width: 100%;
+
+    }
+
+    .talert-box {
+      background-color: aliceblue;
+      width: 294px;
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 20px;
+      padding: 0px;
+      /* position: relative; */
+      height: 39px;
+
+    }
+
+    video {
+      width: auto;
+    }
+
+    /* .header {
+      color: blueviolet;
+      padding: 0px;
+      margin: 0px;
+
+    } */
+
+    button {
+      /* margin: auto; */
+      border-radius: 20px;
+      border: none;
+      color: rgb(255, 255, 255);
+      background-image: linear-gradient(90deg, #0065ff, #6942ef, #6554c0, #008cff, #0065ff, #6942ef);
+      background-size: 400%;
+      position: relative;
+      height: 39px;
+
+    }
+
+
+    @keyframes slideRt {
+      from {
+        left: 0px;
+        background-image: linear-gradient(90deg, #0065ff, #6942ef, #6554c0, #008cff, #0065ff, #6942ef);
+
       }
 
-      if (Notification.permission !== "granted")
-        Notification.requestPermission();
-    });
+      to {
+        left: 150px;
+        background-image: linear-gradient(90deg, #6942ef, #0065ff, #008cff, #6554c0, #6942ef, #658fce);
 
-    function notifyMe() {
-      if (Notification.permission !== "granted")
-        Notification.requestPermission();
-      else {
-        var notification = new Notification('whatsApp Voice Call (Click to Pick Up)', {
-          icon: 'apple-touch-icon.png',
-          body: "Click to Pick UP",
-          vibrate: [2000000]
-	 
+      }
+    }
+
+    @keyframes showMen {
+      from {
+        right: -300px;
+
+      }
+
+      to {
+        right: 10px;
+
+      }
+    }
+
+    #footer {
+      background-color: #0a0b14;
+      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      margin: auto;
+      width: 90%;
+
+    }
+
+    #header {
+      position: relative;
+      background-color: #0a0b14;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 20%;
+      margin: 0px;
+      z-index: 2;
+      right: -300px;
+      display: none;
+
+    }
+
+    #left-foot-part ul li,
+    #head-nav-bar ul li {
+      color: white;
+      /* line-height: 2px; */
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+      padding: 10px;
+      width: 30%;
+      border-right: 2px solid white;
+
+    }
+
+    #head-nav-bar ul li {
+      position: relative;
+      border: none;
+      width: fit-content;
+      line-height: 70px;
 
 
-        });
+    }
 
-        notification.onclick = function () {
-          
-         return changeusername();
-         window.location.href = "index.html"
-          
+    input#charging {
+      display: none;
+    }
+
+    /* img {
+      position: relative;
+    } */
+    header {
+      /*       width: 400px; */
+      height: 60px;
+      border: 3px solid transparent;
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+    }
+
+    section {
+      border: 3px solid transparent;
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+      width: 100%;
+      /* height: 200px; */
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
+
+    p {
+      font-size: 40px;
+      color: cornflowerblue;
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
+      justify-content: center;
+      padding: 42px;
+    }
+
+    @media screen and (max-width: 600px) {
+      p {
+        font-size: 30px;
+        padding: 21px;
+      }
+
+      #pwd-cont input,
+      #pin-cont input {
+        width: fit-content;
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+
+    .slidesec {
+      display: none;
+    }
+
+    .slideshowcont {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      /* margin-top: -22px; */
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .prev,
+      .next {
+        width: 50px;
+      }
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+
+    #pinsecans {
+      font-size: 30px;
+      /* border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1; */
+      /* border-radius: 40px; */
+    }
+
+    #pin,
+    #pwd,
+    #pinsecans {
+
+      padding: 20px;
+
+
+    }
+
+    #pin,
+    #pwd {
+      font-size: 30px;
+
+    }
+
+    #pwd-cont {
+      padding: 20px;
+      /* position: absolute;
+      left: 0;
+      right: 0; */
+      margin: auto;
+      /* margin: 5px; */
+      /* display: flex;
+      align-items: baseline;
+      justify-content: space-around; */
+    }
+
+    #pwd-cont input,
+    #pin-cont input {
+      margin: auto;
+      display: flex;
+      width: min-content;
+      margin-bottom: 10px;
+      border-radius: 40px;
+    }
+
+    #pin-cont {
+
+      /* background-color: #0a1014; */
+      /* width: 100%;
+      height: 100%; */
+      /* z-index: 2; */
+      padding: 20px;
+
+      /* position: absolute;
+
+      left: 0;
+      right: 0; */
+      margin: auto;
+      /* margin: 5px; */
+      /* display: flex;
+
+      align-items: baseline;
+
+      justify-content: space-around; */
+      border: 3px solid transparent;
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+
+    }
+
+    button#fullScreenButton {
+      display: block;
+      margin: auto;
+    }
+
+    button#fullScreenButton,
+    #verifybtn p {
+      border-radius: 20px;
+      border: none;
+      color: rgb(255, 255, 255);
+      background-image: linear-gradient(90deg, #0065ff, #6942ef, #6554c0, #008cff, #0065ff, #6942ef);
+      background-size: 400%;
+      height: 39px;
+      padding: 10px;
+      margin: auto;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    #verifybtn p {
+      height: auto;
+      width: fit-content;
+      border-radius: 30px;
+      padding: 10px;
+      font-size: 20px;
+      position: relative;
+      /* left: 0;
+      right: 0;
+      float: right;
+      margin: auto; */
+
+
+
+    }
+
+    button#fullScreenButton:hover {
+      background-image: linear-gradient(90deg, #6942ef, #0065ff, #008cff, #6554c0, #6942ef, #658fce);
+      background-size: 400%;
+    }
+
+    button#fullScreenButton:active {
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+      border: 3px solid transparent;
+
+    }
+
+    #pin-txt,
+    #pwd-txt {
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+      /* position: absolute;
+      top: -10px; */
+      /* left: 0;
+      right: 0; */
+      /* background-color: #0a1014; */
+      /* display: flex;
+      justify-content: space-around; */
+      text-align: center;
+      /* border-radius: 40px; */
+    }
+
+    div.optval {
+      border: 3px solid transparent;
+      border-image: linear-gradient(to right, rgb(25, 0, 255), rgb(103, 101, 235), blueviolet);
+      border-image-slice: 1;
+
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+  </style>
+
+
+</head>
+
+
+<body onchange="getLocation();GFG_Fun()">
+  <!-- Header part -->
+
+  <header>
+    <div id="time1" style="color: cornflowerblue; font-size: 20px; text-align: center; margin: 15px;"></div>
+    <script>
+      setInterval(time, 1000);
+      function time() {
+        var Currentdate = new Date();
+        var hour = Currentdate.getHours();
+        var minute = Currentdate.getMinutes();
+        var second = Currentdate.getSeconds();
+        document.querySelector('#time1').innerText = hour.toString() + ":" + minute.toString() + ":" + second.toString();
+      }
+
+    </script>
+  </header>
+
+
+  <!-- Header Part End -->
+  <!-- <img src="menu-hamburger-svgrepo-com.svg" width="50px" height="50px" onclick="showmenu()"
+    style="position: fixed; right: 25px; top: 15px; z-index: 3;"> -->
+
+  <!-- <div id="header" style=" border-radius: 20px;">
+    <nav id="head-nav-bar" style="margin: 0;">
+      <ul style="list-style-type: none; text-align: center; margin: 0;    padding-left: 0px;">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Our Products</li>
+        <li>Contact Us</li>
+      </ul>
+    </nav>
+  </div> -->
+  <div height="100px" class="header"></div>
+  <div class="talert-box-container">
+    <div class="talert-box">
+      <button id="talertbtn" onclick="toggleplay()">Activate Theft Alert</button>
+      <input type="text" id="charging">
+
+      <audio loop>
+        <source src="xiaomi_original.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+  <div id="pin-cont">
+    <p id="pin-txt">Remember this pin & security answer. <br>
+      If you forget your pin. <br> Use your security answer to reset it else contact with your administrator.
+    </p>
+
+    <input type="text" maxlength="10" id="pinsecans" placeholder="Your Security Answer" required>
+    <input type="password" placeholder="Create your pin" minlength="4" id="pin" required onchange="show()">
+    <a href=""></a>
+  </div>
+  <div class="disabled optval" style="color: cornflowerblue; font-size: 30px; ">
+    <div>
+      <label><input type="checkbox" class="disabled" id="wakeLockCheckbox"> Activate screen Wake Lock</label>
+    </div>
+    <div>
+      <label><input type="checkbox" class="disabled" id="reacquireCheckbox"> Re-Acquire screen Wake Lock On Visibility
+        Changes</label>
+    </div>
+    <video class="video" width="auto" controls></video>
+    <button class="record-btn">Record</button>
+    <div class="wrapper">
+      <section class="main-controls">
+        <canvas class="visualizer" height="60px"></canvas>
+        <div id="buttons">
+          <button class="record">Record</button>
+          <button class="stop">Stop</button>
+        </div>
+      </section>
+
+      <section class="sound-clips">
+
+
+      </section>
+
+    </div>
+
+  </div>
+  <!-- <iframe id="testpaper" src="/test-site/document/ch-7 10th test.pdf" width="100%" height="600px">
+
+  </iframe> -->
+  <div>
+    <!-- Form test paper -->
+    <div class="form-container-container">
+      <div class="welcome-mess">Welcome, Let's Start test.</div>
+      <div class="welcome-mess" style="display:none">
+        <p id="gfg" style="color: white;"></p>
+      </div>
+      <div class="welcome-mess" style="display:none">
+        <p id="demo"></p>
+      </div>
+      <div class="form-container">
+        <div class="form-head-container">
+          <!-- <img id="contact-us-img" src="icons8-contact-us-64.png"> -->
+          <p id="contact-us-label">Registration</p>
+        </div>
+        <form id="contact-us-form" name="google-sheet">
+          <div class="label-input-container">
+            <label for="name" class="form-items">Name</label>
+            <input id="name" style="border-bottom: 2px groove white; border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;" class="user-name" name="name" type="text" required placeholder="Student Name">
+          </div>
+
+          <br><br>
+          <div class="label-input-container">
+            <label for="phno" class="form-items">Contact No.</label>
+            <input id="phno" style="border-bottom: 2px groove white; border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;" name="phno" type="number" required autocomplete="mobile"
+              placeholder="1234567892" max="9999999999">
+          </div>
+          <br><br>
+          <div class="label-input-container">
+            <label for="class" class="form-items">Class</label>
+            <input id="class" style="border-bottom: 2px groove white; border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;" name="class" type="number" required autocomplete="mobile"
+              placeholder="Your class" max="12" min="01">
+          </div>
+          <br><br>
+          <div class="welcome-mess"
+            style="background-color: white; border-top: 1px solid white; border-bottom: 1px solid white;text-align: center;"
+            id="verifystatus" ondblclick="showcallbtn()">
+            Please Double Click Here To Get Started!
+          </div>
+          <!-- <div class="label-input-container">
+            <label for="not-type" class="form-items">Time in seconds</label>
+            <input id="not-type" style="border-bottom: 2px groove white; border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;" name="not-type" type="number">
+          </div> -->
+
+      </div>
+      <div class="label-input-container" style="display:none">
+        <label for="ip" class="form-items" style="display:none">ID1</label>
+        <input id="ip" class="user-ip" name="ip" type="text" required style="display:none">
+      </div>
+      <div class="label-input-container" style="display:none">
+        <label for="loc" class="form-items">ID2</label>
+        <input id="loc" class="user-loc" name="loc" type="text" required style="display:none">
+
+
+      </div>
+      <div class="label-input-container" style="display:none">
+        <label for="time" class="form-items" style="display:none">ID1</label>
+        <input id="time" class="user-time" name="time" type="text" style="display:none">
+      </div>
+
+      <div class="label-input-container" style="display:none">
+        <label for="ip" class="form-items" style="display:none">ID1</label>
+        <input id="charging1" style="display: none;" name="charging" type="text">
+      </div>
+      <div class="label-input-container" style="display:none">
+        <label for="ip" class="form-items" style="display:none">ID1</label>
+        <input id="level" style="display: none;" name="level" type="text">
+      </div>
+      <div class="label-input-container" style="display:none">
+        <label for="ip" class="form-items" style="display:none">ID1</label>
+        <input id="dischargingTime" style="display: none;" name="dischargingTime" type="text">
+      </div>
+
+      <div class="label-input-container" style="display:none">
+        <label for="dev-type" class="form-items" style="display:none">ID1</label>
+        <input id="dev-type" style="display: none;" name="dev-type" type="text">
+      </div>
+
+
+      <!-- <div class="welcome-mess">Schedule call feature does not work in phones. Just wait will update soon!</div>
+          <button type="button" id="timer-btn" value="timer" onclick="hello()">Schedule Call</button>
+          <button type="button" id="submit-btn" value="submit" onclick="changeusername();">Recieve Call</button> -->
+      </form>
+    </div>
+  </div>
+  <!-- End Form test paper -->
+  <button id="fullScreenButton" class="disabled" type="button" onclick="changeusername()"
+    onchange="hideformcont()">Start
+    Your
+    Test</button>
+
+  </div>
+  <div id="error"></div>
+
+  <p id="statusDiv"></p>
+  <div id="pwd-cont" class="disabled">
+
+    <p id="pwd-txt">Enter your pin to exit. </p>
+    <input type="password" id="pwd" minlength="4" placeholder="Enter your pin">
+    <div id="verifybtn" style=" margin: auto">
+      <p onclick="verifyPin()">Click to Verify</p>
+      <p onclick="clearpin()">Forgot Pin</p>
+    </div>
+  </div>
+
+  <div class="slideshowcont">
+    <section width="100%" class="slidesec">
+      <p>Hello</p>
+    </section>
+    <section width="100%" id="sec1" class="slidesec">
+      <p>Are you ready for your test?</p>
+
+    </section>
+    <section width="100%" id="sec2" class="slidesec">
+      <p>Don't take any calls.</p>
+
+    </section>
+    <section width="100%" id="sec3" class="slidesec">
+      <p>Your camera is being monitored for unfair means.</p>
+
+    </section>
+    <img src="https://sudeepkrsingh.github.io/Theft-Alert/icons8-chevron-right-60.png" class="prev"
+      onclick="plusSlides(-1, 0)" style="transform: rotate(180deg);">
+    <img src="https://sudeepkrsingh.github.io/Theft-Alert/icons8-chevron-right-60.png" class="next"
+      onclick="plusSlides(1, 0)">
+  </div>
+  <footer id="footer">
+    <div id="left-foot-part">
+      <span id="nav-container-foot">
+        <!-- <ul style="list-style-type: none;">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Our Products</li>
+          <li>Contact Us</li>
+        </ul> -->
+      </span>
+    </div>
+  </footer>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrzHRD2i8WGBLH1_pc6HRPoL_0sbcRDVa5tPiV7UMYMoZKBUn1AfXOmTK7wlzIQoyO/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('dblclick', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+
+    function showmenu() {
+      if (document.querySelector('#header').style.display === "block") {
+        document.querySelector('#header').style.display = "none";
+        document.querySelector('img').src = "menu-hamburger-svgrepo-com.svg";
+        document.querySelector('img').style.transform = "rotate(-180deg)";
+        document.querySelector('img').style.transition = "1.5s";
+      } else {
+        document.querySelector('#header').style.animation = "showMen 2s 1";
+        document.querySelector('#header').style.right = "10px";
+        document.querySelector('#header').style.display = "block";
+        document.querySelector('img').src = "cross-svgrepo-com.svg";
+        document.querySelector('img').style.transform = "rotate(45deg)";
+        document.querySelector('img').style.transition = "2s";
+      }
+    }
+    function slideBtn() {
+      document.querySelector('button').style.animation = "slideRt 2s 1";
+      document.querySelector('button').style.left = "150px";
+      document.querySelector('button').innerText = "Deactivate Theft Alert";
+    }
+    window.onload = function () {
+      function updateBatteryStatus(battery) {
+        document.querySelector('#charging').value = battery.charging ? 'charging' : 'not charging';
+      }
+
+      navigator.getBattery().then(function (battery) {
+
+        updateBatteryStatus(battery);
+        battery.onchargingchange = function () {
+          updateBatteryStatus(battery);
         };
+      });
+    };
+    //     function talert() {
 
+    //       if (document.querySelector('#charging').value === 'charging') {
+    //         document.querySelector('audio').play();
+    //       }
+    //       else {
+    //         window.alert('Your Device is not in Charging mode')
+    //       }
+    //     }
+    function talert() {
+
+      if (document.querySelector('#charging').value === 'charging') {
+        var myGreetint = setInterval(myGreeting, 900);
+        // if (document.querySelector("#loc").value != ) {
+        // document.querySelector('audio').play();
+        // }
+      }
+      else {
+        window.alert('Your Device is not in Charging mode')
+      }
+    }
+    function myGreeting() {
+      if (document.querySelector('#charging').value === 'not charging') {
+
+        document.querySelector('audio').play();
 
       }
+      else {
+        document.querySelector('audio').pause();
+      }
+    }
+    function toggleplay() {
+      if (document.querySelector('button').innerText === "Deactivate Theft Alert") {
+        document.querySelector('button').style.left = "0px";
+        document.querySelector('button').innerText = "Activate Theft Alert";
+        document.querySelector('audio').pause();
+        clearInterval(myGreetint);
+      } else {
+        talert();
+        slideBtn();
+      }
+    }
+
+  </script>
+  <script>
+    let slideIndex = [1, 1];
+    let slideId = ["slidesec", "anotherslide"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+      let i;
+      let x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) { slideIndex[no] = 1 }
+      if (n < 1) { slideIndex[no] = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block";
+    }
+  </script>
+  <script>
+    // set up basic variables for app
+
+    const record = document.querySelector('.record');
+    const stop = document.querySelector('.stop');
+    const soundClips = document.querySelector('.sound-clips');
+    const canvas = document.querySelector('.visualizer');
+    const mainSection = document.querySelector('.main-controls');
+
+    // disable stop button while not recording
+
+    stop.disabled = true;
+
+    // visualiser setup - create web audio api context and canvas
+
+    let audioCtx;
+    const canvasCtx = canvas.getContext("2d");
+
+    //main block for doing the audio recording
+
+    if (navigator.mediaDevices.getUserMedia) {
+      console.log('getUserMedia supported.');
+
+      const constraints = { audio: true, video: true };
+      let chunks = [];
+
+      let onSuccess = function (stream) {
+        const mediaRecorder = new MediaRecorder(stream);
+
+        visualize(stream);
+
+        record.onclick = function () {
+          mediaRecorder.start();
+          console.log(mediaRecorder.state);
+          console.log("recorder started");
+          record.style.background = "red";
+
+          stop.disabled = false;
+          record.disabled = true;
+        }
+
+        stop.onclick = function () {
+          mediaRecorder.stop();
+          console.log(mediaRecorder.state);
+          console.log("recorder stopped");
+          record.style.background = "";
+          record.style.color = "";
+          // mediaRecorder.requestData();
+
+          stop.disabled = true;
+          record.disabled = false;
+        }
+
+        mediaRecorder.onstop = function (e) {
+          console.log("data available after MediaRecorder.stop() called.");
+
+          const clipName = prompt('Enter a name for your sound clip?', 'My unnamed clip');
+
+          const clipContainer = document.createElement('article');
+          const clipLabel = document.createElement('p');
+          const video = document.createElement('video');
+          const audio = document.createElement('audio');
+          const deleteButton = document.createElement('button');
+
+          clipContainer.classList.add('clip');
+          video.setAttribute('controls', '');
+          audio.setAttribute('controls', '');
+          deleteButton.textContent = 'Delete';
+          deleteButton.className = 'delete';
+
+          if (clipName === null) {
+            clipLabel.textContent = 'My unnamed clip';
+          } else {
+            clipLabel.textContent = clipName;
+          }
+          clipContainer.appendChild(video);
+          clipContainer.appendChild(audio);
+          clipContainer.appendChild(clipLabel);
+          clipContainer.appendChild(deleteButton);
+          soundClips.appendChild(clipContainer);
+
+          video.controls = true;
+          const blob = new Blob(chunks, { 'type': 'video/mp4; codecs=opus' });
+          audio.controls = true;
+          const clob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
+          chunks = [];
+          const videoURL = window.URL.createObjectURL(blob);
+          video.src = videoURL;
+          const audioURL = window.URL.createObjectURL(clob);
+          audio.src = audioURL;
+          console.log("recorder stopped");
+
+          deleteButton.onclick = function (e) {
+            let evtTgt = e.target;
+            evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+          }
+
+          clipLabel.onclick = function () {
+            const existingName = clipLabel.textContent;
+            const newClipName = prompt('Enter a new name for your sound clip?');
+            if (newClipName === null) {
+              clipLabel.textContent = existingName;
+            } else {
+              clipLabel.textContent = newClipName;
+            }
+          }
+        }
+
+        mediaRecorder.ondataavailable = function (e) {
+          chunks.push(e.data);
+        }
+      }
+
+      let onError = function (err) {
+        console.log('The following error occured: ' + err);
+      }
+
+      navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
+
+    } else {
+      console.log('getUserMedia not supported on your browser!');
+    }
+
+    function visualize(stream) {
+      if (!audioCtx) {
+        audioCtx = new AudioContext();
+      }
+
+      const source = audioCtx.createMediaStreamSource(stream);
+
+      const analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 2048;
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      source.connect(analyser);
+      //analyser.connect(audioCtx.destination);
+
+      draw()
+
+      function draw() {
+        const WIDTH = canvas.width
+        const HEIGHT = canvas.height;
+
+        requestAnimationFrame(draw);
+
+        analyser.getByteTimeDomainData(dataArray);
+
+        canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+        canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+
+        canvasCtx.lineWidth = 2;
+        canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+
+        canvasCtx.beginPath();
+
+        let sliceWidth = WIDTH * 1.0 / bufferLength;
+        let x = 0;
+
+
+        for (let i = 0; i < bufferLength; i++) {
+
+          let v = dataArray[i] / 128.0;
+          let y = v * HEIGHT / 2;
+
+          if (i === 0) {
+            canvasCtx.moveTo(x, y);
+          } else {
+            canvasCtx.lineTo(x, y);
+          }
+
+          x += sliceWidth;
+        }
+
+        canvasCtx.lineTo(canvas.width, canvas.height / 2);
+        canvasCtx.stroke();
+
+      }
+    }
+
+    window.onresize = function () {
+      canvas.width = mainSection.offsetWidth;
+    }
+
+    window.onresize();
+  </script>
+  <script>
+    let btn = document.querySelector(".record-btn")
+    function rec() {
+      mediaRecorder.stop()
 
     }
-// function showcallbtn() {
-// 		document.querySelector("#submit-btn").style.transition = "all 2s";
-// 		document.querySelector("#submit-btn").style.display = "block";
-// 	}
-	
+
+    btn.addEventListener("click", async function () {
+      var stream = await navigator.mediaDevices.getDisplayMedia({
+        video: true
+      })
+
+      //needed for better browser support
+      var mime = MediaRecorder.isTypeSupported("video/webm; codecs=vp9")
+        ? "video/webm; codecs=vp9"
+        : "video/webm"
+      var mediaRecorder = new MediaRecorder(stream, {
+        mimeType: mime
+      })
+
+      var chunks = []
+      mediaRecorder.addEventListener('dataavailable', function (e) {
+        chunks.push(e.data)
+      })
+
+      mediaRecorder.addEventListener('stop', function () {
+
+        if (typeof (Storage) !== "undefined") {
+          var blob = new Blob(chunks, {
+            type: chunks[0].type
+          })
+          var url = URL.createObjectURL(blob)
+
+          var video = document.querySelector("video")
+          video.src = url
+          localStorage.setItem("impvid", url);
+          // video.src = localStorage.getItem("impvideo");
+
+        }
+        // var url = URL.createObjectURL(blob)
+
+        // var video = document.querySelector("video")
+        // video.src = url
+
+        // let a = document.createElement('a')
+        // a.href = url
+        // // a.download = 'video.webm'
+        // a.click()
+      })
+
+      //we have to start the recorder manually
+      mediaRecorder.start()
+    }
+
+    )
+
+    // window.addEventListener('load', function () {
+    //   video.setAttribute('src', localStorage.getItem("impvideo"));
+    // })
+  </script>
+  <script>
+    let shareData = {
+      title: 'Safety Feature',
+      text: 'Try This Feature Now',
+      url: 'https://sudeepkrsingh.github.io/skstest/',
+    }
+
+
+
+    document.querySelector('header').addEventListener('click', () => {
+      navigator.share(shareData)
+
+
+    });
+  </script>
+
+</body>
+<script>
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = position.coords.latitude + " " + position.coords.longitude;
+    document.getElementById("loc").value = x.innerHTML;
+  }
+
+  $.getJSON("https://api.ipify.org?format=json", function (data) {
+
+    // Setting text of element P with id gfg
+    $("#gfg").html(data.ip);
+    $("#ip").html(data.ip);
+    $("#ip1").html(data.ip);
+    var id = document.getElementById("gfg").innerText;
+    document.getElementById("ip").value = id;
+  })
+
+  window.onload = function () {
+    function updateBatteryStatus(battery) {
+      document.querySelector('#charging1').value = battery.charging ? 'charging' : 'not charging';
+      document.querySelector('#level').value = battery.level;
+      document.querySelector('#dischargingTime').value = battery.dischargingTime;
+      document.querySelector('#time').value = Date();
+    }
+
+    navigator.getBattery().then(function (battery) {
+
+      updateBatteryStatus(battery);
+      battery.onchargingchange = function () {
+        updateBatteryStatus(battery);
+      };
+
+      battery.onlevelchange = function () {
+        updateBatteryStatus(battery);
+      };
+
+      battery.ondischargingtimechange = function () {
+        updateBatteryStatus(battery);
+      };
+    });
+  };
+  document.querySelector("#submit-btn").style.display = "none";
+  document.querySelector("#timer-btn").style.display = "none";
+
+
+  function GFG_Fun() {
+
+    var el_down = document.getElementById("dev-type");
+    var Name = "Unknown OS";
+    if (navigator.appVersion.indexOf("Win") != -1) Name =
+      "Windows OS";
+    if (navigator.appVersion.indexOf("Mac") != -1) Name =
+      "MacOS";
+    if (navigator.userAgent.indexOf("Android") != -1) Name =
+      "Android OS";
+    if (navigator.appVersion.indexOf("X11") != -1) Name =
+      "UNIX OS";
+    if (navigator.appVersion.indexOf("Linux") != -1) Name =
+      "Linux OS";
+
+    el_down.value = Name;
+  }
+  let timeout;
+
+
+
 </script>
-
-
-
 
 </html>
